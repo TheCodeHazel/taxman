@@ -2,12 +2,26 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Award, Users, TrendingUp, MapPin, Heart, Shield, CheckCircle, Sparkles, Star } from 'lucide-react';
 
+
+type VisibleElement = 'text' | 'certs' | 'stats';
+
+type Stat = {
+  id: 1 | 2 | 3;
+  icon: React.ElementType;
+  number: string;
+  label: string;
+  target: number;
+  suffix: string;
+  color: string;
+};
+
+
 const AboutSection = () => {
-  const [visibleElements, setVisibleElements] = useState([]);
+const [visibleElements, setVisibleElements] = useState<VisibleElement[]>([]);
   const [counters, setCounters] = useState({ years: 0, clients: 0, retention: 0 });
   const sectionRef = useRef(null);
 
-  const stats = [
+  const stats:Stat[] = [
     {
       id: 1,
       icon: Award,
@@ -73,7 +87,7 @@ const AboutSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const animateCounter = (id, target) => {
+  const animateCounter = (id:number, target:number) => {
     let current = 0;
     const increment = target / 50;
     const timer = setInterval(() => {
@@ -89,7 +103,7 @@ const AboutSection = () => {
     }, 30);
   };
 
-  const StatCard = ({ stat, index }) => {
+  const StatCard = ({ stat, index }: { stat: Stat; index: number }) => {
     const [isHovered, setIsHovered] = useState(false);
     const Icon = stat.icon;
     const counterValue = stat.id === 1 ? counters.years : stat.id === 2 ? counters.clients : counters.retention;

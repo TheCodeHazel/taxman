@@ -6,17 +6,33 @@ import {
   FileText, Building2, Users, Sparkles
 } from 'lucide-react';
 
+
+type Testimonial = {
+  id: number;
+  name: string;
+  role: string;
+  rating: number;
+  text: string;
+  avatar: string;
+};
+
+type Faq = {
+  id: number;
+  question: string;
+  answer: string;
+};
+
 const FinalSections = () => {
   // Testimonials state
-  const [visibleTestimonials, setVisibleTestimonials] = useState([]);
-  const testimonialsRef = useRef(null);
+  const [visibleTestimonials, setVisibleTestimonials] = useState<number[]>([]);
+  const testimonialsRef = useRef<HTMLElement | null>(null);
 
   // FAQ state
-  const [openFaq, setOpenFaq] = useState(null);
-  const [visibleFaqs, setVisibleFaqs] = useState([]);
-  const faqRef = useRef(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [visibleFaqs, setVisibleFaqs] = useState<number[]>([]);
+const faqRef = useRef<HTMLElement | null>(null);
 
-  const testimonials = [
+  const testimonials:Testimonial[] = [
     {
       id: 1,
       name: "Ahmed Hassan",
@@ -43,7 +59,7 @@ const FinalSections = () => {
     }
   ];
 
-  const faqs = [
+  const faqs:Faq[] = [
     {
       id: 1,
       question: "What documents do I need for tax filing in Pakistan?",
@@ -123,7 +139,10 @@ const FinalSections = () => {
     };
   }, []);
 
-  const TestimonialCard = ({ testimonial, index }) => {
+  const TestimonialCard = ({ testimonial, index }: {
+  testimonial: Testimonial;
+  index: number;
+}) => {
     const [isHovered, setIsHovered] = useState(false);
     const isVisible = visibleTestimonials.includes(index);
 
@@ -189,7 +208,10 @@ const FinalSections = () => {
     );
   };
 
-  const FaqItem = ({ faq, index }) => {
+  const FaqItem = ({ faq, index }: {
+  faq: Faq;
+  index: number;
+}) => {
     const isOpen = openFaq === faq.id;
     const isVisible = visibleFaqs.includes(index);
 

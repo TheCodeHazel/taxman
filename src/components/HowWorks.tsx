@@ -9,13 +9,24 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-const HowItWorksSection = () => {
-  const [activeStep, setActiveStep] = useState(0);
-  const [visibleSteps, setVisibleSteps] = useState([]);
-  const [lineProgress, setLineProgress] = useState(0);
-  const sectionRef = useRef(null);
 
-  const steps = [
+type Step = {
+  id: number;
+  number: string;
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  details: string;
+  color: string;
+};
+
+const HowItWorksSection = () => {
+  const [activeStep, setActiveStep] = useState<number>(0);
+  const [visibleSteps, setVisibleSteps] = useState<number[]>([]);
+  const [lineProgress, setLineProgress] = useState<number>(0);
+const sectionRef = useRef<HTMLElement | null>(null);
+
+  const steps :Step[]= [
     {
       id: 1,
       number: "01",
@@ -92,7 +103,11 @@ const HowItWorksSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const StepCard = ({ step, index, isLast }) => {
+  const StepCard = ({ step, index, isLast }: {
+  step: Step;
+  index: number;
+  isLast: boolean;
+}) => {
     const [isHovered, setIsHovered] = useState(false);
     const Icon = step.icon;
     const isVisible = visibleSteps.includes(step.id);

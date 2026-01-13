@@ -2,11 +2,18 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { MapPin, Zap, DollarSign, Users, Lock, Headphones, Sparkles, CheckCircle } from 'lucide-react';
 
+type Feature = {
+  id: number;
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  gradient: string;
+};
 const WhyChooseSection = () => {
-  const [visibleFeatures, setVisibleFeatures] = useState([]);
-  const sectionRef = useRef(null);
+  const [visibleFeatures, setVisibleFeatures] = useState<number[]>([]);
+  const sectionRef = useRef<HTMLElement | null>(null);
 
-  const features = [
+  const features:Feature[] = [
     {
       id: 1,
       icon: MapPin,
@@ -74,7 +81,11 @@ const WhyChooseSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const FeatureBlock = ({ feature, index, isReversed }) => {
+  const FeatureBlock = ({ feature, index, isReversed }: {
+  feature: Feature;
+  index: number;
+  isReversed: boolean;
+}) => {
     const [isHovered, setIsHovered] = useState(false);
     const Icon = feature.icon;
     const isVisible = visibleFeatures.includes(feature.id);

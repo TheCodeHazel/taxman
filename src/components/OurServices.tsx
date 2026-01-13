@@ -1,12 +1,18 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
 import { FileText, Building2, FileCheck, Shield, TrendingUp, Receipt, ArrowRight, Sparkles } from 'lucide-react';
-
+type Service = {
+  id: number;
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  color: string;
+};
 const ServicesSection = () => {
-  const [visibleCards, setVisibleCards] = useState([]);
+  const [visibleCards, setVisibleCards] = useState<number[]>([]);
   const sectionRef = useRef(null);
 
-  const services = [
+  const services:Service[] = [
     {
       id: 1,
       icon: FileText,
@@ -75,7 +81,10 @@ const ServicesSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const ServiceCard = ({ service, index }) => {
+  const ServiceCard = ({ service, index }: {
+  service: Service;
+  index: number;
+}) => {
     const [isHovered, setIsHovered] = useState(false);
     const Icon = service.icon;
     const isVisible = visibleCards.includes(service.id);
