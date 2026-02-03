@@ -229,7 +229,7 @@ const WhyChooseSection = () => {
           <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-5 py-2.5 rounded-full border border-[#E0E0E0] shadow-sm">
             <Sparkles className="w-5 h-5 text-[#982017]" />
             <span className="text-[#982017] text-sm font-bold uppercase tracking-wider">
-              Why Choose TaxMan
+              Why Choose 365AccounTix
             </span>
           </div>
           

@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail, MapPin, ChevronDown, Award, Users, Shield, CheckCircle, MessageCircle } from 'lucide-react';
+import Image from 'next/image';
 
-const TaxManHero = () => {
+const AccounTixHero = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -49,23 +50,34 @@ const TaxManHero = () => {
             <div className="flex items-center space-x-3 group">
               <div className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 ${
                 isScrolled 
+                  ? 'bg-gradient-to-br from-[#FFFFFF] to-[#DCDCDC]' 
+                  : 'bg-white backdrop-blur-sm'
+              }`}>
+              {/* <div className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 ${
+                isScrolled 
                   ? 'bg-gradient-to-br from-[#982017] to-[#C32B2B]' 
                   : 'bg-white/10 backdrop-blur-sm'
-              }`}>
-                <Award className={`w-7 h-7 transition-colors duration-300 ${
+              }`}> */}
+                {/* <Award className={`w-7 h-7 transition-colors duration-300 ${
                   isScrolled ? 'text-white' : 'text-white'
-                }`} />
+                }`} /> */}
+                {/* <Image src="/365Png.png" height={28} width={28} alt='logo'
+                style={{filter: 'brightness(0) invert(1);'}}
+                /> */}
+                <Image src="/365Png.png" height={28} width={28} alt='logo'
+                // style={{filter: 'brightness(0) invert(1);'}}
+                />
               </div>
               <div>
                 <h1 className={`text-2xl font-bold transition-colors duration-300 ${
                   isScrolled ? 'text-[#982017]' : 'text-white'
                 }`}>
-                  TaxMan
+                  365AccounTix
                 </h1>
                 <p className={`text-xs transition-colors duration-300 ${
                   isScrolled ? 'text-gray-600' : 'text-white/80'
                 }`}>
-                  Consultancy Services
+                  Accounting | Tax | Business Solution
                 </p>
               </div>
             </div>
@@ -328,4 +340,4 @@ const TaxManHero = () => {
   );
 };
 
-export default TaxManHero;
+export default AccounTixHero;

@@ -5,6 +5,7 @@ import {
   Facebook, Twitter, Linkedin, Instagram, MessageCircle, Send,
   FileText, Building2, Users, HeadphonesIcon, Sparkles
 } from 'lucide-react';
+import Image from 'next/image';
 
 type Testimonial = {
   id: number;
@@ -35,7 +36,7 @@ const TestimentionalSection = () => {
       name: "Ahmed Hassan",
       role: "CEO, Tech Solutions Ltd",
       rating: 5,
-      text: "TaxMan has been handling our corporate taxes for 3 years now. Their expertise in Pakistani tax laws is unmatched. They saved us significant money through proper planning and always deliver on time.",
+      text: "365AccounTix has been handling our corporate taxes for 3 years now. Their expertise in Pakistani tax laws is unmatched. They saved us significant money through proper planning and always deliver on time.",
       avatar: "AH"
     },
     {
@@ -43,7 +44,7 @@ const TestimentionalSection = () => {
       name: "Fatima Khan",
       role: "Small Business Owner",
       rating: 5,
-      text: "As a first-time business owner, I was overwhelmed with tax compliance. TaxMan made everything so simple and explained every step. Their personalized service is worth every penny!",
+      text: "As a first-time business owner, I was overwhelmed with tax compliance. 365AccounTix made everything so simple and explained every step. Their personalized service is worth every penny!",
       avatar: "FK"
     },
     {
@@ -51,7 +52,7 @@ const TestimentionalSection = () => {
       name: "Usman Ali",
       role: "Freelance Consultant",
       rating: 5,
-      text: "Filing individual returns used to be a nightmare. TaxMan's online system is incredibly easy, and their team is always available to answer questions. Highly recommended for freelancers!",
+      text: "Filing individual returns used to be a nightmare. 365AccounTix's online system is incredibly easy, and their team is always available to answer questions. Highly recommended for freelancers!",
       avatar: "UA"
     }
   ];
@@ -84,8 +85,8 @@ const TestimentionalSection = () => {
     },
     {
       id: 6,
-      question: "How do I contact TaxMan consultancy?",
-      answer: "You can reach us multiple ways: Call us at +92 51 1234567, WhatsApp at +92 300 1234567, email us at info@taxman.pk, or visit our office in Blue Area, Islamabad. You can also fill out the contact form on our website for a callback within 2 hours during business hours."
+      question: "How do I contact 365AccounTix consultancy?",
+      answer: "You can reach us multiple ways: Call us at +92 51 1234567, WhatsApp at +92 300 1234567, email us at info@365AccounTix.com, or visit our office in Blue Area, Islamabad. You can also fill out the contact form on our website for a callback within 2 hours during business hours."
     }
   ];
 
@@ -337,12 +338,14 @@ const TestimentionalSection = () => {
             <div className="space-y-6">
               <div>
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#982017] to-[#C32B2B] flex items-center justify-center">
-                    <FileText className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#FFFFFF] to-[#EFEFEF] flex items-center justify-center">
+                    {/* <FileText className="w-6 h-6 text-white" /> */}
+                    <Image src="/365Png.png" height={28} width={28} alt='logo'/>
                   </div>
                   <div>
-                    <h3 className="text-white text-2xl font-bold">TaxMan</h3>
-                    <p className="text-xs text-gray-400">Consultancy Services</p>
+                    <h3 className="text-white text-2xl font-bold">365AccounTix</h3>
+                    <p className="text-xs text-gray-400">
+Accounting | Tax | Business Solution</p>
                   </div>
                 </div>
                 <p className="text-sm leading-relaxed">
@@ -426,8 +429,8 @@ const TestimentionalSection = () => {
                 </li>
                 <li className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-[#982017]" />
-                  <a href="mailto:info@taxman.pk" className="text-sm hover:text-[#982017] transition-colors">
-                    info@taxman.pk
+                  <a href="mailto:info@365AccounTix.com" className="text-sm hover:text-[#982017] transition-colors">
+                    info@365AccounTix.com
                   </a>
                 </li>
               </ul>
@@ -470,7 +473,7 @@ const TestimentionalSection = () => {
           <div className="pt-8 border-t border-gray-800">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-sm text-gray-400">
-                © 2025 TaxMan Consultancy. All rights reserved.
+                © 2025 365AccounTix Consultancy. All rights reserved.
               </p>
               
               <div className="flex flex-wrap justify-center gap-6 text-sm">

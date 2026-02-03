@@ -211,7 +211,7 @@ const [visibleElements, setVisibleElements] = useState<VisibleElement[]>([]);
           <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-5 py-2.5 rounded-full border border-[#E0E0E0] shadow-sm mb-6">
             <Heart className="w-5 h-5 text-[#982017] fill-[#982017]" />
             <span className="text-[#982017] text-sm font-bold uppercase tracking-wider">
-              About TaxMan
+              About 365AccounTix
             </span>
           </div>
 
@@ -235,7 +235,7 @@ const [visibleElements, setVisibleElements] = useState<VisibleElement[]>([]);
             >
               <div className="prose prose-lg">
                 <p className="text-gray-700 leading-relaxed text-lg">
-                  Founded in <span className="font-bold text-[#982017]">2010</span>, TaxMan Consultancy has grown from a small tax advisory firm into one of Islamabad's most trusted names in financial services. What started as a passion for helping individuals navigate complex tax regulations has evolved into a comprehensive consultancy serving over 500 businesses and individuals.
+                  Founded in <span className="font-bold text-[#982017]">2010</span>, 365AccounTix Consultancy has grown from a small tax advisory firm into one of Islamabad's most trusted names in financial services. What started as a passion for helping individuals navigate complex tax regulations has evolved into a comprehensive consultancy serving over 500 businesses and individuals.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed text-lg">
@@ -344,7 +344,7 @@ const [visibleElements, setVisibleElements] = useState<VisibleElement[]>([]);
         <div className="mt-20 text-center">
           <div className="inline-block bg-white rounded-2xl p-8 shadow-xl border border-[#E0E0E0]">
             <p className="text-xl text-gray-700 mb-6 max-w-2xl">
-              Ready to experience the TaxMan difference? Let's start building your financial success story together.
+              Ready to experience the 365AccounTix difference? Let's start building your financial success story together.
             </p>
             <button
               className="px-10 py-4 bg-gradient-to-r from-[#982017] to-[#C32B2B] text-white rounded-xl font-bold shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3"
