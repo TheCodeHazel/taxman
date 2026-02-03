@@ -27,39 +27,15 @@ type PartnerSectionProps = {
   member: Member;
   sectionId: string;
   sectionRef: React.RefObject<HTMLElement | null> ;
+    isVisible: boolean;  // Pass visibility as prop instead of accessing parent state
+
 };
 
-const TeamSection = () => {
-  const [visibleSections, setVisibleSections] = useState<string[]>([]);
-  const section1Ref = useRef<HTMLElement | null>(null);
-  const section2Ref = useRef<HTMLElement | null>(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const id = entry.target.getAttribute('data-section-id');
-            // setVisibleSections((prev) => [...new Set([...prev, id])]);
-            if (id) {
-  setVisibleSections(prev => Array.from(new Set([...prev, id])));
-}
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (section1Ref.current) observer.observe(section1Ref.current);
-    if (section2Ref.current) observer.observe(section2Ref.current);
-
-    return () => observer.disconnect();
-  }, []);
-
-  const PartnerSection = ({ member, sectionId, sectionRef }: PartnerSectionProps) => {
+  const PartnerSection = ({ member, sectionId, sectionRef,isVisible }: PartnerSectionProps) => {
     const [isHovered, setIsHovered] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const isVisible = visibleSections.includes(sectionId);
+    // const isVisible = visibleSections.includes(sectionId);
     const SpecialtyIcon = member.specialtyIcon;
     const cardRef = useRef<HTMLDivElement | null>(null);
 
@@ -407,6 +383,56 @@ const TeamSection = () => {
     );
   };
 
+
+
+const TeamSection = () => {
+  const [visibleSections, setVisibleSections] = useState<string[]>([]);
+  const section1Ref = useRef<HTMLElement | null>(null);
+  const section2Ref = useRef<HTMLElement | null>(null);
+
+//   useEffect(() => {
+//     const observer = new IntersectionObserver(
+//       (entries) => {
+//         entries.forEach((entry) => {
+//           if (entry.isIntersecting) {
+//             const id = entry.target.getAttribute('data-section-id');
+//             // setVisibleSections((prev) => [...new Set([...prev, id])]);
+//             if (id) {
+//   setVisibleSections(prev => Array.from(new Set([...prev, id])));
+// }
+//           }
+//         });
+//       },
+//       { threshold: 0.1 }
+//     );
+
+//     if (section1Ref.current) observer.observe(section1Ref.current);
+//     if (section2Ref.current) observer.observe(section2Ref.current);
+
+//     return () => observer.disconnect();
+//   }, []);
+useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('data-section-id');
+            if (id) {
+              setVisibleSections(prev => Array.from(new Set([...prev, id])));
+            }
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (section1Ref.current) observer.observe(section1Ref.current);
+    if (section2Ref.current) observer.observe(section2Ref.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+
   const member1 = {
     name: "Abid Ali",
     designation: "Partner & Tax Litigation Expert",
@@ -503,6 +529,7 @@ const TeamSection = () => {
         member={member1} 
         sectionId="partner-1"
         sectionRef={section1Ref}
+        isVisible={visibleSections.includes("partner-1")}
       />
 
       {/* Partner 2 - Muhammad Yaseen */}
@@ -511,6 +538,7 @@ const TeamSection = () => {
         member={member2} 
         sectionId="partner-2"
         sectionRef={section2Ref}
+        isVisible={visibleSections.includes("partner-1")}
       />
     </>
   );
