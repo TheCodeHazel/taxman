@@ -286,7 +286,7 @@ const [visibleElements, setVisibleElements] = useState<VisibleElement[]>([]);
                       className="flex items-center space-x-3 bg-white px-4 py-3 rounded-xl border border-[#E0E0E0] hover:border-[#982017] hover:shadow-lg transition-all duration-300 group"
                     >
                       <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#982017]/10 to-[#C32B2B]/10 flex items-center justify-center group-hover:from-[#982017] group-hover:to-[#C32B2B] transition-all duration-300">
-                        <Icon className="w-4 h-4 text-[#982017] group-hover:text-white transition-colors duration-300" />
+                        {Icon && <Icon className="w-4 h-4 text-[#982017] group-hover:text-white transition-colors duration-300" />}
                       </div>
                       <span className="text-sm font-medium text-gray-700 group-hover:text-[#982017] transition-colors duration-300">
                         {cert.name}

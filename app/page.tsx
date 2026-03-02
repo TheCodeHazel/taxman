@@ -70,13 +70,15 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (<>
-  <AccounTixHero msg={hero_zh}/>
+
+
+ <AccounTixHero msg={hero_zh}/>
   <TeamSection tr={team_zh}/>
    <ServicesSection tr={service_zh}/>
    <WhyChooseSection tr={whycho0se_zh}/>
    <HowItWorksSection tr={howwork_zh}/>
    <AboutSection tr={about_zh}/>
-   <TestimentionalSection tr={testi_zh}/>
+   <TestimentionalSection tr={testi_zh}/>  
    </>
   );
 }
