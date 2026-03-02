@@ -1,0 +1,47 @@
+{
+  "header": {
+    "badge": "简单流程",
+    "titleLine1": "操作",
+    "titleLine2": "方式",
+    "description": "只需4个简单步骤即可开始。我们已优化流程，让税务申报变得轻松无忧"
+  },
+  "steps": [
+    {
+      "id": 1,
+      "key": "contact",
+      "number": "01",
+      "title": "联系我们",
+      "description": "致电或提交表单",
+      "details": "通过电话、WhatsApp或在线表单与我们联系。我们全天候24/7接收您的咨询。"
+    },
+    {
+      "id": 2,
+      "key": "consultation",
+      "number": "02",
+      "title": "咨询服务",
+      "description": "讨论您的需求",
+      "details": "与我们的专家预约免费咨询。我们将了解您的需求并提供量身定制的解决方案。"
+    },
+    {
+      "id": 3,
+      "key": "documentation",
+      "number": "03",
+      "title": "资料提交",
+      "description": "安全共享文件",
+      "details": "通过我们加密的门户上传文件。所有资料均严格保密处理。"
+    },
+    {
+      "id": 4,
+      "key": "completion",
+      "number": "04",
+      "title": "完成办理",
+      "description": "获取申报结果",
+      "details": "收到已完成的税务申报及所有相关文件。我们将代表您处理FBR申报事宜。"
+    }
+  ],
+  "cta": {
+    "title": "准备开始了吗？",
+    "subtitle": "立即加入500+位满意客户",
+    "buttonText": "开启您的旅程"
+  }
+}

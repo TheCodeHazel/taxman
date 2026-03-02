@@ -1,0 +1,69 @@
+{
+  "header": {
+    "badge": "关于 365AccounTix",
+    "titleLine1": "您在",
+    "titleLine2": "财务成功之路上的合作伙伴"
+  },
+  "story": {
+    "paragraph1": "成立于2010年，365AccounTix 咨询公司已从一家小型税务顾问事务所发展成为伊斯兰堡最值得信赖的金融服务品牌之一。最初源于帮助个人应对复杂税务法规的热情，如今已发展为一家为500多家企业和个人提供全面咨询服务的专业机构。",
+    "paragraph2": "我们的团队由25+名认证专业人士组成，在税务、会计和商业咨询领域拥有数十年的综合经验。我们不仅为您报税——更成为您长期的财务合作伙伴，致力于您的成长与成功。",
+    "paragraph3": "我们总部位于伊斯兰堡，服务范围覆盖拉瓦尔品第、拉合尔、卡拉奇及更多地区。凭借对透明度、个性化服务以及紧跟监管变化的承诺，我们赢得了98%的客户留存率——这充分体现了客户对我们的信任。"
+  },
+  "locationBadge": "服务于伊斯兰堡、拉瓦尔品第及更多地区",
+  "certificationsTitle": "认证与会员资格",
+  "certifications": [
+    {
+      "key": "secp",
+      "name": "SECP 注册机构"
+    },
+    {
+      "key": "fbr",
+      "name": "FBR 授权机构"
+    },
+    {
+      "key": "iso",
+      "name": "ISO 9001 认证"
+    },
+    {
+      "key": "icap",
+      "name": "ICAP 会员"
+    }
+  ],
+  "achievements": {
+    "badge": "我们的成就",
+    "title": "数据见证实力",
+    "subtitle": "以卓越建立信任",
+    "bottomNote": "深受巴基斯坦各地企业信赖",
+    "floatingBadge": "自2010年起"
+  },
+  "stats": [
+    {
+      "id": 1,
+      "key": "years",
+      "number": "15+",
+      "label": "从业年限",
+      "target": 15,
+      "suffix": "+"
+    },
+    {
+      "id": 2,
+      "key": "clients",
+      "number": "500+",
+      "label": "满意客户",
+      "target": 500,
+      "suffix": "+"
+    },
+    {
+      "id": 3,
+      "key": "retention",
+      "number": "98%",
+      "label": "客户留存率",
+      "target": 98,
+      "suffix": "%"
+    }
+  ],
+  "cta": {
+    "text": "准备体验 365AccounTix 的专业服务吗？让我们携手打造您的财务成功之路。",
+    "buttonText": "预约咨询"
+  }
+}

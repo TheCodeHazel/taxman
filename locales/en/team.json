@@ -1,0 +1,76 @@
+{
+  "header": {
+    "badge": "Meet Our Partners",
+    "titleLine1": "Specialized Expertise",
+    "titleLine2": "For Every Tax Need",
+    "description": "Combining Pakistani tax mastery with USA accounting expertise to serve clients globally"
+  },
+  "labels": {
+    "years": "Years",
+    "projects": "Projects",
+    "expertiseTitle": "Areas of Expertise",
+    "credentialsTitle": "Professional Credentials",
+    "cta": "Schedule Consultation"
+  },
+  "members": [
+    {
+      "id": "partner-1",
+      "name": "Abid Ali",
+      "designation": "Partner & Tax Litigation Expert",
+      "role": "Corporate Tax & SECP Compliance Specialist",
+      "credentials": "CIPFA – England & Wales",
+      "badgeText": "CIPFA",
+      "initials": "AA",
+      "experience": "25+",
+      "projects": "100+",
+      "focus": "Pakistan Tax Laws & Corporate Compliance",
+      "sectionTitle": "Partner Profile",
+      "expertise": [
+        "Corporate Tax Planning & Strategic Advisory",
+        "Tax Litigation & Appeals before FBR & Appellate Tribunals",
+        "SECP Compliance & NBFC Regulatory Management",
+        "Federal & Provincial Tax Laws (Income Tax, Sales Tax)",
+        "Internal & External Audit Representation",
+        "Business Incorporation, Restructuring & Corporate Conversions",
+        "Foreign Branch & Liaison Office Establishment",
+        "Tax Assessment, Rectification & Dispute Resolution"
+      ],
+      "qualifications": [
+        "Chartered Institute of Public Finance and Accountancy (CIPFA) – England & Wales",
+        "Vice Chairman, Tax Resolution Committee – Federation of Chambers of Commerce & Industry Pakistan",
+        "Member, Rawalpindi Islamabad Tax Bar Association",
+        "Tax Trainer, Ministry of Industries & Production, Pakistan (Pakistan Institute of Management)"
+      ]
+    },
+    {
+      "id": "partner-2",
+      "name": "Muhammad Yaseen",
+      "designation": "USA Bookkeeper & Tax Filer",
+      "role": "International Tax & Financial Reporting Specialist",
+      "credentials": "CPA (USA), MS Finance",
+      "badgeText": "CPA",
+      "initials": "MY",
+      "experience": "15+",
+      "projects": "50+",
+      "focus": "USA Tax & International Financial Services",
+      "sectionTitle": "Senior Professional",
+      "expertise": [
+        "US Federal & State Tax Compliance (Forms 1040, 1065, 1120-S, 1120, 990)",
+        "Full-Charge Bookkeeping & Accounting for US-Based Businesses",
+        "Financial Statement Preparation (GAAP & IFRS Standards)",
+        "QuickBooks Online, Oracle, SAP & Cloud-Based Accounting Systems",
+        "Real Estate & Construction Project Finance Management",
+        "Cross-Border Tax Advisory & International Compliance",
+        "Financial Data Analytics & Automation (Excel, Power BI, Python)",
+        "Multi-Entity Consolidation & Intercompany Reconciliations"
+      ],
+      "qualifications": [
+        "Certified Public Accountant (CPA) – United States of America",
+        "MS Finance – International Islamic University, Islamabad",
+        "QuickBooks ProAdvisor (Level 1 & 2) – Intuit Certified",
+        "CFA Level III Candidate – CFA Institute",
+        "Google Data Analytics Professional Certificate"
+      ]
+    }
+  ]
+}

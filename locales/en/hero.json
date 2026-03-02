@@ -1,0 +1,84 @@
+{
+  "brand": {
+    "name": "365AccounTix",
+    "tagline": "Accounting | Tax | Business Solution"
+  },
+  "navbar": {
+    "menu": {
+      "services": "Services",
+      "about": "About",
+      "howItWorks": "How It Works",
+      "contact": "Contact",
+      "callNow": "Call Now"
+    }
+  },
+  "hero": {
+    "trustedBadge": "Trusted by 500+ Businesses",
+    "headline": {
+      "line1": "Islamabad's Trusted",
+      "line2": "Tax & Business Consultancy"
+    },
+    "description": "Expert tax filing, business registration & financial consulting for individuals & businesses across Pakistan"
+  },
+  "stats": {
+    "experience": {
+      "value": "15+ Years",
+      "label": "Experience"
+    },
+    "clients": {
+      "value": "500+",
+      "label": "Clients Served"
+    },
+    "certified": {
+      "value": "Certified",
+      "label": "By Government"
+    }
+  },
+  "trustBadges": {
+    "secp": "SECP Registered",
+    "fbr": "FBR Authorized",
+    "iso": "ISO Certified"
+  },
+  "form": {
+    "title": "Get Free Consultation",
+    "subtitle": "Fill the form below and our expert will contact you",
+    "fields": {
+      "fullName": {
+        "label": "Full Name *",
+        "placeholder": "Enter your name"
+      },
+      "phone": {
+        "label": "Phone Number *",
+        "placeholder": "+92 300 1234567"
+      },
+      "email": {
+        "label": "Email Address *",
+        "placeholder": "your@email.com"
+      },
+      "service": {
+        "label": "Service Required *",
+        "placeholder": "Select a service",
+        "options": {
+          "taxFiling": "Individual Tax Filing",
+          "corporateTax": "Corporate Tax Services",
+          "businessRegistration": "Business Registration",
+          "audit": "Audit & Compliance",
+          "financialPlanning": "Financial Planning",
+          "vat": "VAT/Sales Tax Returns"
+        }
+      }
+    },
+    "buttons": {
+      "submit": "Get Free Consultation",
+      "whatsapp": "Chat on WhatsApp"
+    },
+    "footerNote": "⚡ Response within 2 hours • 100% confidential"
+  },
+  "alerts": {
+    "validationError": "Please fill all required fields",
+    "successMessage": "Thank you! We will contact you within 2 hours."
+  },
+  "whatsapp": {
+    "defaultMessage": "Hello, I need tax consultation"
+  }
+}

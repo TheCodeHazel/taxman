@@ -5,6 +5,13 @@ import {
   Star, Sparkles, Shield, Building2, CheckCircle,
   LucideIcon
 } from 'lucide-react';
+import { TTeam } from '@/locales/type';
+
+type  Props = {
+  tr: TTeam
+}
+
+
 type Member = {
   name: string;
   designation: string;
@@ -28,17 +35,17 @@ type PartnerSectionProps = {
   sectionId: string;
   sectionRef: React.RefObject<HTMLElement | null> ;
     isVisible: boolean;  // Pass visibility as prop instead of accessing parent state
-
+ tr:TTeam
 };
 
 
-  const PartnerSection = ({ member, sectionId, sectionRef,isVisible }: PartnerSectionProps) => {
+  const PartnerSection = ({ member, sectionId, sectionRef,isVisible,tr }: PartnerSectionProps) => {
     const [isHovered, setIsHovered] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     // const isVisible = visibleSections.includes(sectionId);
     const SpecialtyIcon = member.specialtyIcon;
     const cardRef = useRef<HTMLDivElement | null>(null);
-
+    const _label = tr.labels;
     useEffect(() => {
       const handleScroll = () => {
         if (cardRef.current) {
@@ -231,7 +238,7 @@ type PartnerSectionProps = {
                       </div>
                       <div className={`text-gray-600 font-semibold transition-all duration-300 ${
                         isScrolled && window.innerWidth < 1024 ? 'text-[10px]' : 'text-xs'
-                      }`}>Years</div>
+                      }`}>{_label.years}</div>
                     </div>
                     <div 
                       className={`rounded-xl text-center transition-all duration-300 ${
@@ -249,7 +256,7 @@ type PartnerSectionProps = {
                       </div>
                       <div className={`text-gray-600 font-semibold transition-all duration-300 ${
                         isScrolled && window.innerWidth < 1024 ? 'text-[10px]' : 'text-xs'
-                      }`}>Projects</div>
+                      }`}>{_label.projects}</div>
                     </div>
                   </div>
 
@@ -296,7 +303,7 @@ type PartnerSectionProps = {
                     <Shield className="w-6 h-6" style={{ color: member.color }} />
                   </div>
                   <h4 className="text-xl font-bold text-gray-900">
-                    Areas of Expertise
+                    {_label.expertiseTitle}
                   </h4>
                 </div>
                 <div className="space-y-3">
@@ -331,7 +338,7 @@ type PartnerSectionProps = {
                     <Award className="w-6 h-6" style={{ color: member.color }} />
                   </div>
                   <h4 className="text-xl font-bold text-gray-900">
-                    Professional Credentials
+                    {_label.credentialsTitle}
                   </h4>
                 </div>
                 <div className="space-y-3">
@@ -360,7 +367,7 @@ type PartnerSectionProps = {
                   style={{ boxShadow: '0 8px 25px rgba(152, 32, 23, 0.3)' }}
                 >
                   <Briefcase className="w-5 h-5" />
-                  <span>Schedule Consultation</span>
+                  <span>{_label.cta}</span>
                 </button>
               </div>
             </div>
@@ -385,7 +392,8 @@ type PartnerSectionProps = {
 
 
 
-const TeamSection = () => {
+ 
+const TeamSection = ({tr}:Props) => {
   const [visibleSections, setVisibleSections] = useState<string[]>([]);
   const section1Ref = useRef<HTMLElement | null>(null);
   const section2Ref = useRef<HTMLElement | null>(null);
@@ -432,70 +440,42 @@ useEffect(() => {
     return () => observer.disconnect();
   }, []);
 
-
+  const _member1= tr.members[0];
+  const _member2= tr.members[1];
   const member1 = {
-    name: "Abid Ali",
-    designation: "Partner & Tax Litigation Expert",
-    role: "Corporate Tax & SECP Compliance Specialist",
-    credentials: "CIPFA – England & Wales",
-    badgeText: "CIPFA",
+    name: _member1.name,
+    designation: _member1.designation,
+    role: _member1.role,
+    credentials: _member1.credentials,
+    badgeText: _member1.badgeText,
     image: "AA",
-    experience: "25+",
-    projects: "100+",
+    experience: _member1.experience,
+    projects: _member1.projects,
     specialtyIcon: Building2,
     color: "#982017",
     bgColor: "bg-white",
-    focus: "Pakistan Tax Laws & Corporate Compliance",
-    sectionTitle: "Partner Profile",
-    expertise: [
-      "Corporate Tax Planning & Strategic Advisory",
-      "Tax Litigation & Appeals before FBR & Appellate Tribunals",
-      "SECP Compliance & NBFC Regulatory Management",
-      "Federal & Provincial Tax Laws (Income Tax, Sales Tax)",
-      "Internal & External Audit Representation",
-      "Business Incorporation, Restructuring & Corporate Conversions",
-      "Foreign Branch & Liaison Office Establishment",
-      "Tax Assessment, Rectification & Dispute Resolution"
-    ],
-    qualifications: [
-      "Chartered Institute of Public Finance and Accountancy (CIPFA) – England & Wales",
-      "Vice Chairman, Tax Resolution Committee – Federation of Chambers of Commerce & Industry Pakistan",
-      "Member, Rawalpindi Islamabad Tax Bar Association",
-      "Tax Trainer, Ministry of Industries & Production, Pakistan (Pakistan Institute of Management)"
-    ]
+    focus: _member1.focus,
+    sectionTitle: _member1.sectionTitle,
+    expertise: _member1.expertise,
+    qualifications: _member1.qualifications
   };
 
   const member2 = {
-    name: "Muhammad Yaseen",
-    designation: "USA Bookkeeper & Tax Filer",
-    role: "International Tax & Financial Reporting Specialist",
-    credentials: "CPA (USA), MS Finance",
-    badgeText: "CPA",
+    name: _member2.name,
+    designation: _member2.designation,
+    role: _member2.role,
+    credentials: _member2.credentials,
+    badgeText: _member2.badgeText,
     image: "MY",
-    experience: "15+",
-    projects: "50+",
+    experience: _member2.experience,
+    projects: _member2.projects,
     specialtyIcon: Globe,
     color: "#C32B2B",
     bgColor: "bg-[#F8F8F8]",
-    focus: "USA Tax & International Financial Services",
-    sectionTitle: "Senior Professional",
-    expertise: [
-      "US Federal & State Tax Compliance (Forms 1040, 1065, 1120-S, 1120, 990)",
-      "Full-Charge Bookkeeping & Accounting for US-Based Businesses",
-      "Financial Statement Preparation (GAAP & IFRS Standards)",
-      "QuickBooks Online, Oracle, SAP & Cloud-Based Accounting Systems",
-      "Real Estate & Construction Project Finance Management",
-      "Cross-Border Tax Advisory & International Compliance",
-      "Financial Data Analytics & Automation (Excel, Power BI, Python)",
-      "Multi-Entity Consolidation & Intercompany Reconciliations"
-    ],
-    qualifications: [
-      "Certified Public Accountant (CPA) – United States of America",
-      "MS Finance – International Islamic University, Islamabad",
-      "QuickBooks ProAdvisor (Level 1 & 2) – Intuit Certified",
-      "CFA Level III Candidate – CFA Institute",
-      "Google Data Analytics Professional Certificate"
-    ]
+    focus: _member2.focus,
+    sectionTitle: _member2.sectionTitle,
+    expertise: _member2.expertise,
+    qualifications: _member2.qualifications
   };
 
   return (
@@ -506,19 +486,19 @@ useEffect(() => {
           <div className="inline-flex items-center space-x-2 bg-white px-6 py-3 rounded-full border border-[#E0E0E0] shadow-sm">
             <Sparkles className="w-5 h-5 text-[#982017]" />
             <span className="text-[#982017] text-sm font-bold uppercase tracking-wider">
-              Meet Our Partners
+             {tr.header.badge}
             </span>
           </div>
 
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-            Specialized Expertise
+            {tr.header.titleLine1}
             <span className="block mt-2 bg-gradient-to-r from-[#982017] to-[#C32B2B] bg-clip-text text-transparent">
-              For Every Tax Need
+              {tr.header.titleLine2}
             </span>
           </h2>
 
           <p className="text-xl text-gray-600 leading-relaxed">
-            Combining Pakistani tax mastery with USA accounting expertise to serve clients globally
+            {tr.header.description}
           </p>
         </div>
       </section>
@@ -530,6 +510,7 @@ useEffect(() => {
         sectionId="partner-1"
         sectionRef={section1Ref}
         isVisible={visibleSections.includes("partner-1")}
+        tr={tr}
       />
 
       {/* Partner 2 - Muhammad Yaseen */}
@@ -539,6 +520,7 @@ useEffect(() => {
         sectionId="partner-2"
         sectionRef={section2Ref}
         isVisible={visibleSections.includes("partner-1")}
+         tr={tr}
       />
     </>
   );

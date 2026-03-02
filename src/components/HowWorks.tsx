@@ -8,6 +8,7 @@ import {
   Sparkles,
   ArrowRight,
 } from "lucide-react";
+import { THowWeWork } from "@/locales/type";
 
 
 type Step = {
@@ -19,8 +20,10 @@ type Step = {
   details: string;
   color: string;
 };
-
-const HowItWorksSection = () => {
+type  Props = {
+  tr: THowWeWork
+}
+const HowItWorksSection = ({tr}:Props) => {
   const [activeStep, setActiveStep] = useState<number>(0);
   const [visibleSteps, setVisibleSteps] = useState<number[]>([]);
   const [lineProgress, setLineProgress] = useState<number>(0);
@@ -112,7 +115,7 @@ const sectionRef = useRef<HTMLElement | null>(null);
     const Icon = step.icon;
     const isVisible = visibleSteps.includes(step.id);
     const isActive = activeStep === index;
-
+    const _step = tr.steps.find((itm)=>itm.id == step.id)
     return (
       <div className="flex-1 relative">
         <div
@@ -235,10 +238,10 @@ const sectionRef = useRef<HTMLElement | null>(null);
                   isHovered || isActive ? "text-[#982017]" : "text-gray-900"
                 }`}
               >
-                {step.title}
+                {_step?.title}
               </h3>
 
-              <p className="text-gray-600 font-medium">{step.description}</p>
+              <p className="text-gray-600 font-medium">{_step?.description}</p>
 
               {/* Expandable details */}
               {/* <div
@@ -257,7 +260,7 @@ const sectionRef = useRef<HTMLElement | null>(null);
   }`}
               >
                 <p className="text-sm text-gray-500 leading-relaxed px-2">
-                  {step.details}
+                  {_step?.details}
                 </p>
               </div>
             </div>
@@ -363,20 +366,19 @@ const sectionRef = useRef<HTMLElement | null>(null);
           <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#982017]/10 to-[#C32B2B]/10 px-5 py-2.5 rounded-full border border-[#982017]/20">
             <Sparkles className="w-5 h-5 text-[#982017]" />
             <span className="text-[#982017] text-sm font-bold uppercase tracking-wider">
-              Simple Process
+              {tr.header.badge}
             </span>
           </div>
 
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-            How It
+           {tr.header.titleLine1}
             <span className="block mt-2 bg-gradient-to-r from-[#982017] to-[#C32B2B] bg-clip-text text-transparent">
-              Works
+              {tr.header.titleLine2}
             </span>
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Get started in just 4 simple steps. We've streamlined the process to
-            make tax filing effortless
+            {tr.header.description}
           </p>
         </div>
 
@@ -397,15 +399,15 @@ const sectionRef = useRef<HTMLElement | null>(null);
           <div className="inline-flex flex-col sm:flex-row items-center gap-6 bg-gradient-to-r from-[#982017]/5 to-[#C32B2B]/5 px-10 py-8 rounded-2xl border border-[#982017]/10 shadow-lg">
             <div className="space-y-2">
               <p className="text-2xl font-bold text-gray-900">
-                Ready to get started?
+               {tr.cta.title}
               </p>
-              <p className="text-gray-600">Join 500+ satisfied clients today</p>
+              <p className="text-gray-600">{tr.cta.subtitle}</p>
             </div>
             <button
               className="px-8 py-4 bg-gradient-to-r from-[#982017] to-[#C32B2B] text-white rounded-xl font-bold shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-3 text-lg"
               style={{ boxShadow: "0 8px 25px rgba(152, 32, 23, 0.3)" }}
             >
-              <span>Start Your Journey</span>
+              <span>{tr.cta.buttonText}</span>
               <ArrowRight className="w-5 h-5" />
             </button>
           </div>

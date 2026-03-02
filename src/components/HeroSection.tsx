@@ -3,8 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail, MapPin, ChevronDown, Award, Users, Shield, CheckCircle, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
-
-const AccounTixHero = () => {
+import { TMessages } from '@/locales/type';
+type  Props = {
+  msg: TMessages
+}
+const AccounTixHero = ({msg}:Props) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -24,20 +27,21 @@ const AccounTixHero = () => {
 
   const handleSubmit = () => {
     if (!formData.name || !formData.phone || !formData.email || !formData.service) {
-      alert('Please fill all required fields');
+      alert(msg.alerts.validationError);
       return;
     }
     console.log('Form submitted:', formData);
-    alert('Thank you! We will contact you within 2 hours.');
+    alert(msg.alerts.successMessage);
     setFormData({ name: '', phone: '', email: '', service: '' });
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/923001234567?text=Hello, I need tax consultation', '_blank');
+    window.open(`https://wa.me/923001234567?text=${msg.whatsapp.defaultMessage}`, '_blank');
   };
 
   return (
     <div className="relative min-h-screen overflow-hidden">
+      {/* <div className="h-12 w-full bg-black"></div> */}
       {/* Animated Navbar */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
@@ -72,12 +76,12 @@ const AccounTixHero = () => {
                 <h1 className={`text-2xl font-bold transition-colors duration-300 ${
                   isScrolled ? 'text-[#982017]' : 'text-white'
                 }`}>
-                  365AccounTix
+                  {msg.brand.name}
                 </h1>
                 <p className={`text-xs transition-colors duration-300 ${
                   isScrolled ? 'text-gray-600' : 'text-white/80'
                 }`}>
-                  Accounting | Tax | Business Solution
+                  {msg.brand.tagline}
                 </p>
               </div>
             </div>
@@ -87,22 +91,22 @@ const AccounTixHero = () => {
               <a href="#services" className={`font-medium transition-colors duration-300 hover:opacity-80 ${
                 isScrolled ? 'text-gray-700' : 'text-white'
               }`}>
-                Services
+                {msg.navbar.menu.services}
               </a>
               <a href="#about" className={`font-medium transition-colors duration-300 hover:opacity-80 ${
                 isScrolled ? 'text-gray-700' : 'text-white'
               }`}>
-                About
+                {msg.navbar.menu.about}
               </a>
               <a href="#process" className={`font-medium transition-colors duration-300 hover:opacity-80 ${
                 isScrolled ? 'text-gray-700' : 'text-white'
               }`}>
-                How It Works
+                {msg.navbar.menu.howItWorks}
               </a>
               <a href="#contact" className={`font-medium transition-colors duration-300 hover:opacity-80 ${
                 isScrolled ? 'text-gray-700' : 'text-white'
               }`}>
-                Contact
+                {msg.navbar.menu.contact}
               </a>
               <a 
                 href="tel:+923001234567" 
@@ -110,7 +114,7 @@ const AccounTixHero = () => {
                 style={{ boxShadow: '0 4px 15px rgba(152, 32, 23, 0.3)' }}
               >
                 <Phone className="w-4 h-4" />
-                <span>Call Now</span>
+                <span>{msg.navbar.menu.callNow}</span>
               </a>
             </div>
 
@@ -131,29 +135,29 @@ const AccounTixHero = () => {
               <a href="#services" className={`block py-2 font-medium transition-colors ${
                 isScrolled ? 'text-gray-700' : 'text-white'
               }`}>
-                Services
+                {msg.navbar.menu.services}
               </a>
               <a href="#about" className={`block py-2 font-medium transition-colors ${
                 isScrolled ? 'text-gray-700' : 'text-white'
               }`}>
-                About
+                {msg.navbar.menu.about}
               </a>
               <a href="#process" className={`block py-2 font-medium transition-colors ${
                 isScrolled ? 'text-gray-700' : 'text-white'
               }`}>
-                How It Works
+                {msg.navbar.menu.howItWorks}
               </a>
               <a href="#contact" className={`block py-2 font-medium transition-colors ${
                 isScrolled ? 'text-gray-700' : 'text-white'
               }`}>
-                Contact
+                {msg.navbar.menu.contact}
               </a>
               <a 
                 href="tel:+923001234567" 
                 className="flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-[#982017] to-[#C32B2B] text-white rounded-lg font-medium shadow-lg"
               >
                 <Phone className="w-4 h-4" />
-                <span>Call Now</span>
+                <span>{msg.navbar.menu.callNow}</span>
               </a>
             </div>
           )}
@@ -177,18 +181,18 @@ const AccounTixHero = () => {
               <div className="space-y-4">
                 <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-white text-sm font-medium">Trusted by 500+ Businesses</span>
+                  <span className="text-white text-sm font-medium">{msg.hero.trustedBadge}</span>
                 </div>
                 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                  Islamabad's Trusted
+                  {msg.hero.headline.line1}
                   <span className="block mt-2 bg-gradient-to-r from-white to-orange-200 bg-clip-text text-transparent">
-                    Tax & Business Consultancy
+                    {msg.hero.headline.line2}
                   </span>
                 </h1>
                 
                 <p className="text-lg sm:text-xl text-white/90 max-w-2xl leading-relaxed">
-                  Expert tax filing, business registration & financial consulting for individuals & businesses across Pakistan
+                  {msg.hero.description}
                 </p>
               </div>
 
@@ -198,24 +202,24 @@ const AccounTixHero = () => {
                   <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
                     <Award className="w-6 h-6 text-white" />
                   </div>
-                  <p className="text-2xl font-bold text-white mb-1">15+ Years</p>
-                  <p className="text-white/80 text-sm">Experience</p>
+                  <p className="text-2xl font-bold text-white mb-1">{msg.stats.experience.value}</p>
+                  <p className="text-white/80 text-sm">{msg.stats.experience.label}</p>
                 </div>
 
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
                   <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
                     <Users className="w-6 h-6 text-white" />
                   </div>
-                  <p className="text-2xl font-bold text-white mb-1">500+</p>
-                  <p className="text-white/80 text-sm">Clients Served</p>
+                  <p className="text-2xl font-bold text-white mb-1">{msg.stats.clients.value}</p>
+                  <p className="text-white/80 text-sm">{msg.stats.experience.label}</p>
                 </div>
 
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
                   <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
                     <Shield className="w-6 h-6 text-white" />
                   </div>
-                  <p className="text-2xl font-bold text-white mb-1">Certified</p>
-                  <p className="text-white/80 text-sm">By Government</p>
+                  <p className="text-2xl font-bold text-white mb-1">{msg.stats.certified.value}</p>
+                  <p className="text-white/80 text-sm">{msg.stats.certified.label}</p>
                 </div>
               </div>
 
@@ -223,15 +227,15 @@ const AccounTixHero = () => {
               <div className="flex flex-wrap items-center gap-6 pt-4">
                 <div className="flex items-center space-x-2 text-white/90">
                   <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span className="text-sm font-medium">SECP Registered</span>
+                  <span className="text-sm font-medium">{msg.trustBadges.secp}</span>
                 </div>
                 <div className="flex items-center space-x-2 text-white/90">
                   <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span className="text-sm font-medium">FBR Authorized</span>
+                  <span className="text-sm font-medium">{msg.trustBadges.fbr}</span>
                 </div>
                 <div className="flex items-center space-x-2 text-white/90">
                   <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span className="text-sm font-medium">ISO Certified</span>
+                  <span className="text-sm font-medium">{msg.trustBadges.iso}</span>
                 </div>
               </div>
             </div>
@@ -241,70 +245,71 @@ const AccounTixHero = () => {
               <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100 hover:shadow-3xl transition-shadow duration-300">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    Get Free Consultation
+                    {msg.form.title}
                   </h3>
                   <p className="text-gray-600 text-sm">
-                    Fill the form below and our expert will contact you
+                    {msg.form.subtitle}
                   </p>
                 </div>
 
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Full Name *
+                      {msg.form.fields.fullName.label}
                     </label>
                     <input
                       type="text"
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#982017] focus:border-transparent transition-all duration-300 outline-none"
-                      placeholder="Enter your name"
+                      placeholder={msg.form.fields.fullName.placeholder}
                     />
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Phone Number *
+                      {msg.form.fields.phone.label}
                     </label>
                     <input
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({...formData, phone: e.target.value})}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#982017] focus:border-transparent transition-all duration-300 outline-none"
-                      placeholder="+92 300 1234567"
+                      placeholder={msg.form.fields.phone.placeholder}
                     />
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Email Address *
+                      {msg.form.fields.email.label}
                     </label>
                     <input
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({...formData, email: e.target.value})}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#982017] focus:border-transparent transition-all duration-300 outline-none"
-                      placeholder="your@email.com"
+                      placeholder={msg.form.fields.email.placeholder}
                     />
                   </div>
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Service Required *
+                      {msg.form.fields.service.label}
                     </label>
                     <div className="relative">
                       <select
                         value={formData.service}
+                        
                         onChange={(e) => setFormData({...formData, service: e.target.value})}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#982017] focus:border-transparent transition-all duration-300 outline-none appearance-none"
                       >
-                        <option value="">Select a service</option>
-                        <option value="tax-filing">Individual Tax Filing</option>
-                        <option value="corporate-tax">Corporate Tax Services</option>
-                        <option value="business-reg">Business Registration</option>
-                        <option value="audit">Audit & Compliance</option>
-                        <option value="financial">Financial Planning</option>
-                        <option value="vat">VAT/Sales Tax Returns</option>
+                        <option value="">{msg.form.fields.service.placeholder}</option>
+                        <option value="tax-filing">{msg.form.fields.service.options.taxFiling}</option>
+                        <option value="corporate-tax">{msg.form.fields.service.options.corporateTax}</option>
+                        <option value="business-reg">{msg.form.fields.service.options.businessRegistration}</option>
+                        <option value="audit">{msg.form.fields.service.options.audit}</option>
+                        <option value="financial">{msg.form.fields.service.options.financialPlanning}</option>
+                        <option value="vat">{msg.form.fields.service.options.vat}</option>
                       </select>
                       <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
                     </div>
@@ -315,7 +320,7 @@ const AccounTixHero = () => {
                     className="w-full py-4 bg-gradient-to-r from-[#982017] to-[#C32B2B] text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center space-x-2"
                     style={{ boxShadow: '0 8px 20px rgba(152, 32, 23, 0.3)' }}
                   >
-                    <span>Get Free Consultation</span>
+                    <span>{msg.form.buttons.submit}</span>
                     <CheckCircle className="w-5 h-5" />
                   </button>
 
@@ -324,11 +329,11 @@ const AccounTixHero = () => {
                     className="w-full py-4 bg-[#25D366] text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300 flex items-center justify-center space-x-2"
                   >
                     <MessageCircle className="w-5 h-5" />
-                    <span>Chat on WhatsApp</span>
+                    <span>{msg.form.buttons.whatsapp}</span>
                   </button>
 
                   <p className="text-center text-xs text-gray-500 pt-2">
-                    ⚡ Response within 2 hours • 100% confidential
+                    {msg.form.footerNote}
                   </p>
                 </div>
               </div>

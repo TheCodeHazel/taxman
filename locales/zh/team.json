@@ -1,0 +1,76 @@
+{
+  "header": {
+    "badge": "认识我们的合作伙伴",
+    "titleLine1": "专业化专长",
+    "titleLine2": "满足每一项税务需求",
+    "description": "融合巴基斯坦税务专长与美国会计专业知识，为全球客户提供服务"
+  },
+  "labels": {
+    "years": "年",
+    "projects": "项目",
+    "expertiseTitle": "专业领域",
+    "credentialsTitle": "专业资质",
+    "cta": "预约咨询"
+  },
+  "members": [
+    {
+      "id": "partner-1",
+      "name": "Abid Ali",
+      "designation": "合伙人兼税务诉讼专家",
+      "role": "企业税务与SECP合规专家",
+      "credentials": "CIPFA – 英格兰与威尔士",
+      "badgeText": "CIPFA",
+      "initials": "AA",
+      "experience": "25+",
+      "projects": "100+",
+      "focus": "巴基斯坦税法与企业合规",
+      "sectionTitle": "合伙人简介",
+      "expertise": [
+        "企业税务筹划与战略咨询",
+        "FBR及上诉法庭税务诉讼与申诉",
+        "SECP合规与NBFC监管管理",
+        "联邦与省级税法（所得税、销售税）",
+        "内部与外部审计代表",
+        "企业设立、重组与公司转制",
+        "外国分支机构与联络处设立",
+        "税务评估、更正与争议解决"
+      ],
+      "qualifications": [
+        "特许公共财政与会计师协会（CIPFA）– 英格兰与威尔士",
+        "巴基斯坦工商会联合会税务解决委员会副主席",
+        "拉瓦尔品第-伊斯兰堡税务律师协会会员",
+        "巴基斯坦工业与生产部税务培训师（巴基斯坦管理学院）"
+      ]
+    },
+    {
+      "id": "partner-2",
+      "name": "Muhammad Yaseen",
+      "designation": "美国簿记员与报税专员",
+      "role": "国际税务与财务报告专家",
+      "credentials": "CPA（美国），金融学硕士",
+      "badgeText": "CPA",
+      "initials": "MY",
+      "experience": "15+",
+      "projects": "50+",
+      "focus": "美国税务与国际金融服务",
+      "sectionTitle": "高级专业人士",
+      "expertise": [
+        "美国联邦与州税务合规（表格1040、1065、1120-S、1120、990）",
+        "为美国企业提供全盘簿记与会计服务",
+        "财务报表编制（符合GAAP与IFRS标准）",
+        "QuickBooks Online、Oracle、SAP及云端会计系统",
+        "房地产与建筑项目财务管理",
+        "跨境税务咨询与国际合规",
+        "财务数据分析与自动化（Excel、Power BI、Python）",
+        "多实体合并与关联方对账"
+      ],
+      "qualifications": [
+        "注册会计师（CPA）– 美利坚合众国",
+        "金融学硕士 – 伊斯兰堡国际伊斯兰大学",
+        "QuickBooks ProAdvisor（一级与二级）– Intuit认证",
+        "CFA三级考生 – CFA协会",
+        "谷歌数据分析专业证书"
+      ]
+    }
+  ]
+}

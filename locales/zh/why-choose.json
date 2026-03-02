@@ -1,0 +1,65 @@
+{
+  "header": {
+    "badge": "为什么选择 365AccounTix",
+    "titleLine1": "您的成功",
+    "titleLine2": "是我们的首要任务",
+    "description": "我们结合本地专业经验与现代科技，提供卓越的税务与商业咨询服务"
+  },
+  "features": [
+    {
+      "id": 1,
+      "key": "localExpertise",
+      "title": "本地专业经验",
+      "description": "深入了解巴基斯坦税法及FBR流程。我们的团队紧跟最新法规，确保您的全面合规。"
+    },
+    {
+      "id": 2,
+      "key": "fastProcessing",
+      "title": "快速处理",
+      "description": "税务申报平均48小时内完成。我们重视您的时间，在确保准确性和质量的前提下高效工作。"
+    },
+    {
+      "id": 3,
+      "key": "transparentPricing",
+      "title": "透明定价",
+      "description": "无隐藏费用，报价清晰透明。在我们开始处理您的案件前，您将清楚了解所有费用。"
+    },
+    {
+      "id": 4,
+      "key": "personalizedService",
+      "title": "个性化服务",
+      "description": "为您配备专属顾问。与了解您独特财务状况的专家建立长期合作关系。"
+    },
+    {
+      "id": 5,
+      "key": "techEnabled",
+      "title": "科技赋能",
+      "description": "安全的在线文件提交。通过我们加密的平台安全上传文件，全天候24/7随时随地访问。"
+    },
+    {
+      "id": 6,
+      "key": "postFilingSupport",
+      "title": "申报后支持",
+      "description": "6个月免费FBR查询处理服务。我们不会在申报后消失——任何后续问题我们都会全程支持。"
+    }
+  ],
+  "stats": [
+    {
+      "value": "15+",
+      "label": "年经验"
+    },
+    {
+      "value": "500+",
+      "label": "满意客户"
+    },
+    {
+      "value": "98%",
+      "label": "成功率"
+    },
+    {
+      "value": "24/7",
+      "label": "全天候支持"
+    }
+  ],
+  "featureLabel": "特色"
+}

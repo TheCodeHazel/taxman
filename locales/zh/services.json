@@ -1,0 +1,51 @@
+{
+  "header": {
+    "badge": "我们的服务",
+    "titleLine1": "全面的税务与",
+    "titleLine2": "商业解决方案",
+    "description": "从个人所得税申报到复杂的企业合规，我们提供量身定制的一站式财务服务"
+  },
+  "cta": {
+    "customSolutionText": "需要定制解决方案？",
+    "buttonText": "联系我们",
+    "learnMore": "了解更多"
+  },
+  "services": [
+    {
+      "id": 1,
+      "key": "individualTax",
+      "title": "个人税务申报",
+      "description": "提供无忧的个人所得税申报服务，确保最大化扣除并按时向FBR提交。"
+    },
+    {
+      "id": 2,
+      "key": "corporateTax",
+      "title": "企业税务服务",
+      "description": "为各类规模企业提供全面的企业税务筹划、合规管理与战略咨询服务。"
+    },
+    {
+      "id": 3,
+      "key": "businessRegistration",
+      "title": "企业注册",
+      "description": "提供完整的公司设立服务，包括NTN申请、SECP注册及所有监管文件办理。"
+    },
+    {
+      "id": 4,
+      "key": "auditCompliance",
+      "title": "审计与合规",
+      "description": "提供专业审计服务与监管合规管理，保障企业稳健运营。"
+    },
+    {
+      "id": 5,
+      "key": "financialPlanning",
+      "title": "财务规划",
+      "description": "提供战略性财务咨询、预算制定与增长规划，实现可持续的企业成功。"
+    },
+    {
+      "id": 6,
+      "key": "vatSalesTax",
+      "title": "增值税 / 销售税申报",
+      "description": "专业处理销售税注册、月度申报及FBR合规要求。"
+    }
+  ]
+}

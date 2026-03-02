@@ -1,0 +1,51 @@
+{
+  "header": {
+    "badge": "Our Services",
+    "titleLine1": "Comprehensive Tax &",
+    "titleLine2": "Business Solutions",
+    "description": "From individual tax filing to complex corporate compliance, we provide end-to-end financial services tailored to your needs"
+  },
+  "cta": {
+    "customSolutionText": "Need a custom solution?",
+    "buttonText": "Contact Us",
+    "learnMore": "Learn More"
+  },
+  "services": [
+    {
+      "id": 1,
+      "key": "individualTax",
+      "title": "Individual Tax Filing",
+      "description": "Hassle-free personal income tax returns with maximum deductions and timely FBR submissions."
+    },
+    {
+      "id": 2,
+      "key": "corporateTax",
+      "title": "Corporate Tax Services",
+      "description": "Comprehensive corporate tax planning, compliance, and strategic advisory for businesses of all sizes."
+    },
+    {
+      "id": 3,
+      "key": "businessRegistration",
+      "title": "Business Registration",
+      "description": "Complete business setup including NTN, SECP registration, and all regulatory documentation."
+    },
+    {
+      "id": 4,
+      "key": "auditCompliance",
+      "title": "Audit & Compliance",
+      "description": "Professional audit services and regulatory compliance management to keep your business secure."
+    },
+    {
+      "id": 5,
+      "key": "financialPlanning",
+      "title": "Financial Planning",
+      "description": "Strategic financial advisory, budgeting, and growth planning for sustainable business success."
+    },
+    {
+      "id": 6,
+      "key": "vatSalesTax",
+      "title": "VAT / Sales Tax Returns",
+      "description": "Expert handling of sales tax registrations, monthly returns, and FBR compliance requirements."
+    }
+  ]
+}

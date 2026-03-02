@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
 import { MapPin, Zap, DollarSign, Users, Lock, Headphones, Sparkles, CheckCircle } from 'lucide-react';
+import { TWhyChoose } from '@/locales/type';
 
 type Feature = {
   id: number;
@@ -9,7 +10,12 @@ type Feature = {
   description: string;
   gradient: string;
 };
-const WhyChooseSection = () => {
+
+type  Props = {
+  tr: TWhyChoose
+}
+
+const WhyChooseSection = ({tr}:Props) => {
   const [visibleFeatures, setVisibleFeatures] = useState<number[]>([]);
   const sectionRef = useRef<HTMLElement | null>(null);
 
@@ -89,7 +95,7 @@ const WhyChooseSection = () => {
     const [isHovered, setIsHovered] = useState(false);
     const Icon = feature.icon;
     const isVisible = visibleFeatures.includes(feature.id);
-
+    const _feature = tr.features.find((itm)=>itm.id == feature.id);
     return (
       <div
         className={`grid md:grid-cols-2 gap-8 items-center transition-all duration-700 transform ${
@@ -165,18 +171,18 @@ const WhyChooseSection = () => {
           <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-1.5 rounded-full border border-[#E0E0E0] shadow-sm">
             <div className="w-2 h-2 rounded-full bg-[#982017] animate-pulse" />
             <span className="text-[#982017] text-xs font-semibold uppercase tracking-wide">
-              Feature #{index + 1}
+              {tr.featureLabel} #{index + 1}
             </span>
           </div>
 
           <h3 className={`text-3xl font-bold text-gray-900 transition-colors duration-300 ${
             isHovered ? 'text-[#982017]' : ''
           }`}>
-            {feature.title}
+            {_feature?.title}
           </h3>
 
           <p className="text-gray-600 leading-relaxed text-lg">
-            {feature.description}
+            {_feature?.description}
           </p>
 
           {/* Animated underline */}
@@ -229,19 +235,19 @@ const WhyChooseSection = () => {
           <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-5 py-2.5 rounded-full border border-[#E0E0E0] shadow-sm">
             <Sparkles className="w-5 h-5 text-[#982017]" />
             <span className="text-[#982017] text-sm font-bold uppercase tracking-wider">
-              Why Choose 365AccounTix
+              {tr.header.badge}
             </span>
           </div>
           
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-            Your Success Is
+            {tr.header.titleLine1}
             <span className="block mt-2 bg-gradient-to-r from-[#982017] to-[#C32B2B] bg-clip-text text-transparent">
-              Our Priority
+              {tr.header.titleLine2}
             </span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We combine local expertise with modern technology to deliver exceptional tax and business consultancy services
+            {tr.header.description}
           </p>
         </div>
 
@@ -260,7 +266,14 @@ const WhyChooseSection = () => {
         {/* Bottom Stats Bar */}
         <div className="mt-24 bg-white rounded-3xl shadow-xl p-8 border border-[#E0E0E0]">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center space-y-2">
+
+            {tr.stats.map((st)=><div key={st.label} className="text-center space-y-2">
+              <div className="text-4xl font-bold bg-gradient-to-r from-[#982017] to-[#C32B2B] bg-clip-text text-transparent">
+                {st.value}
+              </div>
+              <div className="text-sm text-gray-600 font-medium">{st.label}</div>
+            </div>)}
+            {/* <div className="text-center space-y-2">
               <div className="text-4xl font-bold bg-gradient-to-r from-[#982017] to-[#C32B2B] bg-clip-text text-transparent">
                 15+
               </div>
@@ -283,7 +296,7 @@ const WhyChooseSection = () => {
                 24/7
               </div>
               <div className="text-sm text-gray-600 font-medium">Support Available</div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

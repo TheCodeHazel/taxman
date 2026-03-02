@@ -1,0 +1,84 @@
+{
+  "brand": {
+    "name": "365AccounTix",
+    "tagline": "会计 | 税务 | 商业解决方案"
+  },
+  "navbar": {
+    "menu": {
+      "services": "服务",
+      "about": "关于我们",
+      "howItWorks": "服务流程",
+      "contact": "联系我们",
+      "callNow": "立即致电"
+    }
+  },
+  "hero": {
+    "trustedBadge": "超过 500 家企业的信赖之选",
+    "headline": {
+      "line1": "伊斯兰堡值得信赖的",
+      "line2": "税务与商业咨询"
+    },
+    "description": "为巴基斯坦各地的个人与企业提供专业报税、公司注册及财务咨询服务"
+  },
+  "stats": {
+    "experience": {
+      "value": "15年以上",
+      "label": "行业经验"
+    },
+    "clients": {
+      "value": "500+",
+      "label": "服务客户"
+    },
+    "certified": {
+      "value": "官方认证",
+      "label": "政府认可"
+    }
+  },
+  "trustBadges": {
+    "secp": "SECP 注册",
+    "fbr": "FBR 授权",
+    "iso": "ISO 认证"
+  },
+  "form": {
+    "title": "免费获取咨询",
+    "subtitle": "填写下方表单，我们的专家将与您联系",
+    "fields": {
+      "fullName": {
+        "label": "姓名 *",
+        "placeholder": "请输入您的姓名"
+      },
+      "phone": {
+        "label": "电话号码 *",
+        "placeholder": "+92 300 1234567"
+      },
+      "email": {
+        "label": "电子邮箱 *",
+        "placeholder": "your@email.com"
+      },
+      "service": {
+        "label": "所需服务 *",
+        "placeholder": "请选择服务",
+        "options": {
+          "taxFiling": "个人报税",
+          "corporateTax": "企业税务服务",
+          "businessRegistration": "公司注册",
+          "audit": "审计与合规",
+          "financialPlanning": "财务规划",
+          "vat": "增值税/销售税申报"
+        }
+      }
+    },
+    "buttons": {
+      "submit": "免费获取咨询",
+      "whatsapp": "通过 WhatsApp 咨询"
+    },
+    "footerNote": "⚡ 2小时内回复 • 100% 保密"
+  },
+  "alerts": {
+    "validationError": "请填写所有必填项",
+    "successMessage": "感谢您的提交！我们将在 2 小时内与您联系。"
+  },
+  "whatsapp": {
+    "defaultMessage": "您好，我需要税务咨询"
+  }
+}

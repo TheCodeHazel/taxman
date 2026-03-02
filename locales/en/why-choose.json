@@ -1,0 +1,65 @@
+{
+  "header": {
+    "badge": "Why Choose 365AccounTix",
+    "titleLine1": "Your Success Is",
+    "titleLine2": "Our Priority",
+    "description": "We combine local expertise with modern technology to deliver exceptional tax and business consultancy services"
+  },
+  "features": [
+    {
+      "id": 1,
+      "key": "localExpertise",
+      "title": "Local Expertise",
+      "description": "Deep knowledge of Pakistani tax laws & FBR procedures. Our team stays updated with the latest regulations to ensure your complete compliance."
+    },
+    {
+      "id": 2,
+      "key": "fastProcessing",
+      "title": "Fast Processing",
+      "description": "Average 48-hour turnaround on tax returns. We value your time and work efficiently without compromising on accuracy or quality."
+    },
+    {
+      "id": 3,
+      "key": "transparentPricing",
+      "title": "Transparent Pricing",
+      "description": "No hidden fees, clear quotes upfront. You'll know exactly what you're paying for before we start working on your case."
+    },
+    {
+      "id": 4,
+      "key": "personalizedService",
+      "title": "Personalized Service",
+      "description": "Dedicated consultant for your account. Build a lasting relationship with an expert who understands your unique financial situation."
+    },
+    {
+      "id": 5,
+      "key": "techEnabled",
+      "title": "Tech-Enabled",
+      "description": "Secure online document submission. Upload your files safely through our encrypted platform, accessible 24/7 from anywhere."
+    },
+    {
+      "id": 6,
+      "key": "postFilingSupport",
+      "title": "Post-Filing Support",
+      "description": "Free FBR query handling for 6 months. We don't disappear after filing - we're here to support you through any follow-up questions."
+    }
+  ],
+  "stats": [
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "500+",
+      "label": "Happy Clients"
+    },
+    {
+      "value": "98%",
+      "label": "Success Rate"
+    },
+    {
+      "value": "24/7",
+      "label": "Support Available"
+    }
+  ],
+  "featureLabel": "Feature"
+}

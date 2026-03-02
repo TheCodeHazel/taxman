@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
 import { FileText, Building2, FileCheck, Shield, TrendingUp, Receipt, ArrowRight, Sparkles } from 'lucide-react';
+import { TService } from '@/locales/type';
 type Service = {
   id: number;
   icon: React.ElementType;
@@ -8,7 +9,11 @@ type Service = {
   description: string;
   color: string;
 };
-const ServicesSection = () => {
+type  Props = {
+  tr: TService
+}
+
+const ServicesSection = ({tr}:Props) => {
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
   const sectionRef = useRef(null);
 
@@ -88,7 +93,7 @@ const ServicesSection = () => {
     const [isHovered, setIsHovered] = useState(false);
     const Icon = service.icon;
     const isVisible = visibleCards.includes(service.id);
-
+const _service = tr.services.find((itm)=>itm.id == service.id) ;
     return (
       <div
         className={`relative group transition-all duration-700 transform ${
@@ -151,16 +156,16 @@ const ServicesSection = () => {
           {/* Content */}
           <div className="flex-grow">
             <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#982017] transition-colors duration-300">
-              {service.title}
+              {_service?.title}
             </h3>
             <p className="text-gray-600 leading-relaxed mb-6 text-sm">
-              {service.description}
+              {_service?.description}
             </p>
           </div>
 
           {/* Learn More link */}
           <div className="flex items-center space-x-2 text-[#982017] font-semibold text-sm group/link cursor-pointer">
-            <span className="group-hover/link:underline">Learn More</span>
+            <span className="group-hover/link:underline">{tr.cta.learnMore}</span>
             <ArrowRight 
               className={`w-4 h-4 transition-transform duration-300 ${
                 isHovered ? 'translate-x-2' : 'translate-x-0'
@@ -193,18 +198,18 @@ const ServicesSection = () => {
         <div className="text-center mb-16 space-y-4">
           <div className="inline-flex items-center space-x-2 bg-[#982017]/5 px-4 py-2 rounded-full border border-[#982017]/10">
             <Sparkles className="w-4 h-4 text-[#982017]" />
-            <span className="text-[#982017] text-sm font-semibold">Our Services</span>
+            <span className="text-[#982017] text-sm font-semibold">{tr.header.badge}</span>
           </div>
           
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900">
-            Comprehensive Tax &
+            {tr.header.titleLine1}
             <span className="block mt-2 bg-gradient-to-r from-[#982017] to-[#C32B2B] bg-clip-text text-transparent">
-              Business Solutions
+              {tr.header.titleLine2}
             </span>
           </h2>
           
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            From individual tax filing to complex corporate compliance, we provide end-to-end financial services tailored to your needs
+            {tr.header.description}
           </p>
         </div>
 
@@ -219,12 +224,12 @@ const ServicesSection = () => {
         <div className="mt-16 text-center">
           <div className="inline-flex items-center space-x-4 bg-gradient-to-r from-[#982017]/5 to-[#C32B2B]/5 px-8 py-4 rounded-2xl border border-[#982017]/10">
             <p className="text-gray-700 font-medium">
-              Need a custom solution?
+             {tr.cta.customSolutionText}
             </p>
             <button className="px-6 py-2.5 bg-gradient-to-r from-[#982017] to-[#C32B2B] text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-2"
               style={{ boxShadow: '0 4px 15px rgba(152, 32, 23, 0.3)' }}
             >
-              <span>Contact Us</span>
+              <span>{tr.cta.buttonText}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>

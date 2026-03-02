@@ -1,9 +1,13 @@
 'use client'
 import React, { useState, useEffect, useRef } from 'react';
 import { Award, Users, TrendingUp, MapPin, Heart, Shield, CheckCircle, Sparkles, Star } from 'lucide-react';
+import { TAbout } from '@/locales/type';
 
 
 type VisibleElement = 'text' | 'certs' | 'stats';
+type  Props = {
+  tr: TAbout
+}
 
 type Stat = {
   id: 1 | 2 | 3;
@@ -16,7 +20,7 @@ type Stat = {
 };
 
 
-const AboutSection = () => {
+const AboutSection = ({tr}:Props) => {
 const [visibleElements, setVisibleElements] = useState<VisibleElement[]>([]);
   const [counters, setCounters] = useState({ years: 0, clients: 0, retention: 0 });
   const sectionRef = useRef(null);
@@ -52,10 +56,10 @@ const [visibleElements, setVisibleElements] = useState<VisibleElement[]>([]);
   ];
 
   const certifications = [
-    { name: "SECP Registered", icon: Shield },
-    { name: "FBR Authorized", icon: CheckCircle },
-    { name: "ISO 9001 Certified", icon: Award },
-    { name: "ICAP Member", icon: Star }
+    { key:'secp', name: "SECP Registered", icon: Shield },
+    {  key:'fbr',name: "FBR Authorized", icon: CheckCircle },
+    {  key:'iso',name: "ISO 9001 Certified", icon: Award },
+    {  key:'icap',name: "ICAP Member", icon: Star }
   ];
 
   useEffect(() => {
@@ -71,7 +75,8 @@ const [visibleElements, setVisibleElements] = useState<VisibleElement[]>([]);
             // Animate counters
             stats.forEach((stat, index) => {
               setTimeout(() => {
-                animateCounter(stat.id, stat.target);
+                const _stat = tr.stats.find((itm)=>itm.id == stat.id)
+                animateCounter(stat?.id, _stat?.target || 100);
               }, 800 + index * 200);
             });
           }
@@ -106,8 +111,8 @@ const [visibleElements, setVisibleElements] = useState<VisibleElement[]>([]);
   const StatCard = ({ stat, index }: { stat: Stat; index: number }) => {
     const [isHovered, setIsHovered] = useState(false);
     const Icon = stat.icon;
-    const counterValue = stat.id === 1 ? counters.years : stat.id === 2 ? counters.clients : counters.retention;
-
+    const _stat = tr.stats.find((itm)=>itm.id == stat.id)
+    const counterValue = _stat?.id === 1 ? counters.years : _stat?.id === 2 ? counters.clients : counters.retention;
     return (
       <div
         className={`relative group transition-all duration-700 transform ${
@@ -156,10 +161,10 @@ const [visibleElements, setVisibleElements] = useState<VisibleElement[]>([]);
             <div
               className="text-4xl font-bold bg-gradient-to-r from-[#982017] to-[#C32B2B] bg-clip-text text-transparent"
             >
-              {counterValue}{stat.suffix}
+              {counterValue}{_stat?.suffix}
             </div>
             <div className="text-sm text-gray-600 font-medium">
-              {stat.label}
+              {_stat?.label}
             </div>
           </div>
 
@@ -211,14 +216,14 @@ const [visibleElements, setVisibleElements] = useState<VisibleElement[]>([]);
           <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-5 py-2.5 rounded-full border border-[#E0E0E0] shadow-sm mb-6">
             <Heart className="w-5 h-5 text-[#982017] fill-[#982017]" />
             <span className="text-[#982017] text-sm font-bold uppercase tracking-wider">
-              About 365AccounTix
+              {tr?.header?.badge}
             </span>
           </div>
 
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-            Your Partner in
+           {tr.header.titleLine1}
             <span className="block mt-2 bg-gradient-to-r from-[#982017] to-[#C32B2B] bg-clip-text text-transparent">
-              Financial Success
+              {tr.header.titleLine2}
             </span>
           </h2>
         </div>
@@ -235,15 +240,18 @@ const [visibleElements, setVisibleElements] = useState<VisibleElement[]>([]);
             >
               <div className="prose prose-lg">
                 <p className="text-gray-700 leading-relaxed text-lg">
-                  Founded in <span className="font-bold text-[#982017]">2010</span>, 365AccounTix Consultancy has grown from a small tax advisory firm into one of Islamabad's most trusted names in financial services. What started as a passion for helping individuals navigate complex tax regulations has evolved into a comprehensive consultancy serving over 500 businesses and individuals.
+                  {/* Founded in <span className="font-bold text-[#982017]">2010</span>, 365AccounTix Consultancy has grown from a small tax advisory firm into one of Islamabad's most trusted names in financial services. What started as a passion for helping individuals navigate complex tax regulations has evolved into a comprehensive consultancy serving over 500 businesses and individuals. */}
+                  {tr.story.paragraph1}
                 </p>
 
                 <p className="text-gray-700 leading-relaxed text-lg">
-                  Our team of <span className="font-bold text-[#982017]">25+ certified professionals</span> brings together decades of combined experience in taxation, accounting, and business advisory. We don't just file your taxes—we become your long-term financial partners, invested in your growth and success.
+                  {/* Our team of <span className="font-bold text-[#982017]">25+ certified professionals</span> brings together decades of combined experience in taxation, accounting, and business advisory. We don't just file your taxes—we become your long-term financial partners, invested in your growth and success. */}
+                  {tr.story.paragraph2}
                 </p>
 
                 <p className="text-gray-700 leading-relaxed text-lg">
-                  From our headquarters in Islamabad, we proudly serve clients across <span className="font-bold text-[#982017]">Rawalpindi, Lahore, Karachi, and beyond</span>. Our commitment to transparency, personalized service, and staying ahead of regulatory changes has earned us a 98% client retention rate—a testament to the trust our clients place in us.
+                  {/* From our headquarters in Islamabad, we proudly serve clients across <span className="font-bold text-[#982017]">Rawalpindi, Lahore, Karachi, and beyond</span>. Our commitment to transparency, personalized service, and staying ahead of regulatory changes has earned us a 98% client retention rate—a testament to the trust our clients place in us. */}
+                  {tr.story.paragraph3}
                 </p>
               </div>
 
@@ -251,7 +259,8 @@ const [visibleElements, setVisibleElements] = useState<VisibleElement[]>([]);
               <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-[#982017]/10 to-[#C32B2B]/10 px-6 py-3 rounded-xl border border-[#982017]/20">
                 <MapPin className="w-5 h-5 text-[#982017]" />
                 <span className="text-gray-800 font-semibold">
-                  Serving Islamabad, Rawalpindi & Beyond
+                  {/* Serving Islamabad, Rawalpindi & Beyond */}
+                  {tr.locationBadge}
                 </span>
               </div>
             </div>
@@ -264,12 +273,13 @@ const [visibleElements, setVisibleElements] = useState<VisibleElement[]>([]);
             >
               <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center space-x-2">
                 <Shield className="w-6 h-6 text-[#982017]" />
-                <span>Certifications & Memberships</span>
+                <span>{tr.certificationsTitle}</span>
               </h3>
 
               <div className="grid grid-cols-2 gap-3">
-                {certifications.map((cert, index) => {
-                  const Icon = cert.icon;
+                {tr.certifications.map((cert, index) => {
+                  const Icon = certifications?.find((itm)=>itm.key == cert.key)?.icon;
+                  // const Icon = ceri.icon || Shield;
                   return (
                     <div
                       key={index}
@@ -300,13 +310,13 @@ const [visibleElements, setVisibleElements] = useState<VisibleElement[]>([]);
               <div className="text-center mb-8">
                 <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#982017]/10 to-[#C32B2B]/10 px-4 py-2 rounded-full mb-4">
                   <Sparkles className="w-4 h-4 text-[#982017]" />
-                  <span className="text-[#982017] text-sm font-bold">Our Achievements</span>
+                  <span className="text-[#982017] text-sm font-bold">{tr.achievements.badge}</span>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">
-                  Numbers That Speak
+                  {tr.achievements.title}
                 </h3>
                 <p className="text-gray-600 mt-2">
-                  Building trust through excellence
+                  {tr.achievements.subtitle}
                 </p>
               </div>
 
@@ -321,7 +331,7 @@ const [visibleElements, setVisibleElements] = useState<VisibleElement[]>([]);
               <div className="mt-8 pt-6 border-t border-[#E0E0E0]">
                 <div className="flex items-center justify-center space-x-2 text-sm text-gray-600">
                   <Heart className="w-4 h-4 text-[#982017] fill-[#982017]" />
-                  <span>Trusted by businesses across Pakistan</span>
+                  <span>{tr.achievements.bottomNote}</span>
                 </div>
               </div>
             </div>
@@ -334,7 +344,7 @@ const [visibleElements, setVisibleElements] = useState<VisibleElement[]>([]);
             >
               <div className="bg-gradient-to-r from-[#982017] to-[#C32B2B] text-white px-6 py-3 rounded-full shadow-xl flex items-center space-x-2">
                 <Award className="w-5 h-5" />
-                <span className="font-bold">Since 2010</span>
+                <span className="font-bold">{tr.achievements.floatingBadge}</span>
               </div>
             </div>
           </div>
@@ -344,13 +354,13 @@ const [visibleElements, setVisibleElements] = useState<VisibleElement[]>([]);
         <div className="mt-20 text-center">
           <div className="inline-block bg-white rounded-2xl p-8 shadow-xl border border-[#E0E0E0]">
             <p className="text-xl text-gray-700 mb-6 max-w-2xl">
-              Ready to experience the 365AccounTix difference? Let's start building your financial success story together.
+              {tr.cta.text}
             </p>
             <button
               className="px-10 py-4 bg-gradient-to-r from-[#982017] to-[#C32B2B] text-white rounded-xl font-bold shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3"
               style={{ boxShadow: '0 8px 25px rgba(152, 32, 23, 0.3)' }}
             >
-              <span>Schedule a Consultation</span>
+              <span>{tr.cta.buttonText}</span>
               <Heart className="w-5 h-5" />
             </button>
           </div>

@@ -1,0 +1,47 @@
+{
+  "header": {
+    "badge": "Simple Process",
+    "titleLine1": "How It",
+    "titleLine2": "Works",
+    "description": "Get started in just 4 simple steps. We've streamlined the process to make tax filing effortless"
+  },
+  "steps": [
+    {
+      "id": 1,
+      "key": "contact",
+      "number": "01",
+      "title": "Contact Us",
+      "description": "Call or submit form",
+      "details": "Reach out via phone, WhatsApp, or our online form. We're available 24/7 to receive your inquiry."
+    },
+    {
+      "id": 2,
+      "key": "consultation",
+      "number": "02",
+      "title": "Consultation",
+      "description": "Discuss your needs",
+      "details": "Schedule a free consultation with our expert. We'll understand your requirements and provide tailored solutions."
+    },
+    {
+      "id": 3,
+      "key": "documentation",
+      "number": "03",
+      "title": "Documentation",
+      "description": "Securely share documents",
+      "details": "Upload your files through our encrypted portal. All documents are handled with complete confidentiality."
+    },
+    {
+      "id": 4,
+      "key": "completion",
+      "number": "04",
+      "title": "Completion",
+      "description": "Receive filed returns",
+      "details": "Get your completed tax returns and all necessary documentation. We handle FBR submissions on your behalf."
+    }
+  ],
+  "cta": {
+    "title": "Ready to get started?",
+    "subtitle": "Join 500+ satisfied clients today",
+    "buttonText": "Start Your Journey"
+  }
+}

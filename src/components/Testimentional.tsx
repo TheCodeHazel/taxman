@@ -6,6 +6,13 @@ import {
   FileText, Building2, Users, HeadphonesIcon, Sparkles
 } from 'lucide-react';
 import Image from 'next/image';
+import { TTestimonials } from '@/locales/type';
+
+
+type  Props = {
+  tr: TTestimonials
+}
+
 
 type Testimonial = {
   id: number;
@@ -20,7 +27,7 @@ type Faq = {
   question: string;
   answer: string;
 };
-const TestimentionalSection = () => {
+const TestimentionalSection = ({tr}:Props) => {
   // Testimonials state
   const [visibleTestimonials, setVisibleTestimonials] = useState<number[]>([]);
   const testimonialsRef =useRef<HTMLDivElement | null>(null);
@@ -262,25 +269,25 @@ const TestimentionalSection = () => {
             <div className="inline-flex items-center space-x-2 bg-[#982017]/5 px-5 py-2.5 rounded-full border border-[#982017]/10">
               <Star className="w-5 h-5 text-[#982017] fill-[#982017]" />
               <span className="text-[#982017] text-sm font-bold uppercase tracking-wider">
-                Client Testimonials
+                {tr.testimonialsSection.badge}
               </span>
             </div>
 
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900">
-              What Our Clients
+              {tr.testimonialsSection.titleLine1}
               <span className="block mt-2 bg-gradient-to-r from-[#982017] to-[#C32B2B] bg-clip-text text-transparent">
-                Say About Us
+                {tr.testimonialsSection.titleLine2}
               </span>
             </h2>
 
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Don't just take our word for it. Here's what our satisfied clients have to share
+              {tr.testimonialsSection.description}
             </p>
           </div>
 
           {/* Testimonials Grid */}
           <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
+            {tr.testimonialsSection.items.map((testimonial, index) => (
               <TestimonialCard key={testimonial.id} testimonial={testimonial} index={index} />
             ))}
           </div>
@@ -295,35 +302,35 @@ const TestimentionalSection = () => {
             <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-5 py-2.5 rounded-full border border-[#E0E0E0]">
               <Sparkles className="w-5 h-5 text-[#982017]" />
               <span className="text-[#982017] text-sm font-bold uppercase tracking-wider">
-                FAQ
+                {tr.faqSection.badge}
               </span>
             </div>
 
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900">
-              Frequently Asked
+              {tr.faqSection.titleLine1}
               <span className="block mt-2 bg-gradient-to-r from-[#982017] to-[#C32B2B] bg-clip-text text-transparent">
-                Questions
+                {tr.faqSection.titleLine2}
               </span>
             </h2>
 
             <p className="text-xl text-gray-600">
-              Got questions? We've got answers
+              {tr.faqSection.description}
             </p>
           </div>
 
           {/* FAQ List */}
           <div className="space-y-4">
-            {faqs.map((faq, index) => (
+            {tr.faqSection.items.map((faq, index) => (
               <FaqItem key={faq.id} faq={faq} index={index} />
             ))}
           </div>
 
           {/* CTA */}
           <div className="mt-12 text-center">
-            <p className="text-gray-600 mb-4">Still have questions?</p>
+            <p className="text-gray-600 mb-4">{tr.faqSection.ctaText}</p>
             <button className="px-8 py-3 bg-gradient-to-r from-[#982017] to-[#C32B2B] text-white rounded-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-2">
               <MessageCircle className="w-5 h-5" />
-              <span>Contact Our Team</span>
+              <span>{tr.faqSection.ctaButton}</span>
             </button>
           </div>
         </div>
@@ -345,11 +352,11 @@ const TestimentionalSection = () => {
                   <div>
                     <h3 className="text-white text-2xl font-bold">365AccounTix</h3>
                     <p className="text-xs text-gray-400">
-Accounting | Tax | Business Solution</p>
+{tr.footer.companyTagline}</p>
                   </div>
                 </div>
                 <p className="text-sm leading-relaxed">
-                  Your trusted partner in tax and business consultancy. Serving Islamabad and beyond since 2010.
+                 {tr.footer.description}
                 </p>
               </div>
 
@@ -372,7 +379,7 @@ Accounting | Tax | Business Solution</p>
 
             {/* Column 2: Quick Links */}
             <div>
-              <h4 className="text-white text-lg font-bold mb-6">Quick Links</h4>
+              <h4 className="text-white text-lg font-bold mb-6">{tr.footer.quickLinksTitle}</h4>
               <ul className="space-y-3">
                 <li>
                   <a href="#services" className="hover:text-[#982017] transition-colors duration-300 flex items-center space-x-2">
@@ -383,25 +390,25 @@ Accounting | Tax | Business Solution</p>
                 <li>
                   <a href="#about" className="hover:text-[#982017] transition-colors duration-300 flex items-center space-x-2">
                     <ChevronDown className="w-4 h-4 -rotate-90" />
-                    <span>About Us</span>
+                    <span>{tr.footer.quickLinks[0]}</span>
                   </a>
                 </li>
                 <li>
                   <a href="#process" className="hover:text-[#982017] transition-colors duration-300 flex items-center space-x-2">
                     <ChevronDown className="w-4 h-4 -rotate-90" />
-                    <span>How It Works</span>
+                    <span>{tr.footer.quickLinks[1]}</span>
                   </a>
                 </li>
                 <li>
                   <a href="#testimonials" className="hover:text-[#982017] transition-colors duration-300 flex items-center space-x-2">
                     <ChevronDown className="w-4 h-4 -rotate-90" />
-                    <span>Testimonials</span>
+                    <span>{tr.footer.quickLinks[2]}</span>
                   </a>
                 </li>
                 <li>
                   <a href="#contact" className="hover:text-[#982017] transition-colors duration-300 flex items-center space-x-2">
                     <ChevronDown className="w-4 h-4 -rotate-90" />
-                    <span>Contact</span>
+                    <span>{tr.footer.quickLinks[3]}</span>
                   </a>
                 </li>
               </ul>
@@ -409,11 +416,11 @@ Accounting | Tax | Business Solution</p>
 
             {/* Column 3: Contact Info */}
             <div>
-              <h4 className="text-white text-lg font-bold mb-6">Contact Info</h4>
+              <h4 className="text-white text-lg font-bold mb-6">{tr.footer.contactTitle}</h4>
               <ul className="space-y-4">
                 <li className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 text-[#982017] flex-shrink-0 mt-1" />
-                  <span className="text-sm">Blue Area, Plot 123, Islamabad, Pakistan</span>
+                  <span className="text-sm">{tr.footer.address}</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <Phone className="w-5 h-5 text-[#982017]" />
@@ -438,25 +445,25 @@ Accounting | Tax | Business Solution</p>
 
             {/* Column 4: Business Hours */}
             <div>
-              <h4 className="text-white text-lg font-bold mb-6">Business Hours</h4>
+              <h4 className="text-white text-lg font-bold mb-6">{tr.footer.businessHoursTitle}</h4>
               <div className="space-y-3 mb-6">
                 <div className="flex items-center space-x-3">
                   <Clock className="w-5 h-5 text-[#982017]" />
-                  <span className="text-sm font-semibold text-white">Mon - Fri</span>
+                  <span className="text-sm font-semibold text-white">{tr.footer.hours.monFri}</span>
                 </div>
-                <p className="text-sm ml-8">9:00 AM - 6:00 PM</p>
+                <p className="text-sm ml-8">{tr.footer.hours.monFriTime}</p>
                 
                 <div className="flex items-center space-x-3">
                   <Clock className="w-5 h-5 text-[#982017]" />
-                  <span className="text-sm font-semibold text-white">Saturday</span>
+                  <span className="text-sm font-semibold text-white">{tr.footer.hours.sat}</span>
                 </div>
-                <p className="text-sm ml-8">10:00 AM - 4:00 PM</p>
+                <p className="text-sm ml-8">{tr.footer.hours.satTime}</p>
                 
                 <div className="flex items-center space-x-3">
                   <Clock className="w-5 h-5 text-gray-600" />
-                  <span className="text-sm font-semibold text-gray-500">Sunday</span>
+                  <span className="text-sm font-semibold text-gray-500">{tr.footer.hours.sun}</span>
                 </div>
-                <p className="text-sm ml-8 text-gray-500">Closed</p>
+                <p className="text-sm ml-8 text-gray-500">{tr.footer.hours.sunTime}</p>
               </div>
 
               <a
@@ -464,7 +471,7 @@ Accounting | Tax | Business Solution</p>
                 className="inline-flex items-center space-x-2 px-4 py-2 bg-gray-800 hover:bg-[#982017] rounded-lg transition-colors duration-300 text-sm"
               >
                 <MapPin className="w-4 h-4" />
-                <span>View on Map</span>
+                <span>{tr.footer.viewOnMap}</span>
               </a>
             </div>
           </div>
@@ -473,20 +480,20 @@ Accounting | Tax | Business Solution</p>
           <div className="pt-8 border-t border-gray-800">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-sm text-gray-400">
-                © 2025 365AccounTix Consultancy. All rights reserved.
+                {tr.footer.copyright}
               </p>
               
               <div className="flex flex-wrap justify-center gap-6 text-sm">
                 <a href="#" className="text-gray-400 hover:text-[#982017] transition-colors">
-                  Privacy Policy
+                  {tr.footer.privacy}
                 </a>
                 <span className="text-gray-600">|</span>
                 <a href="#" className="text-gray-400 hover:text-[#982017] transition-colors">
-                  Terms of Service
+                  {tr.footer.terms}
                 </a>
                 <span className="text-gray-600">|</span>
                 <a href="#" className="text-gray-400 hover:text-[#982017] transition-colors">
-                  Cookie Policy
+                  {tr.footer.cookie}
                 </a>
               </div>
               

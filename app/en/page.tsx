@@ -5,13 +5,13 @@ import ServicesSection from "@/src/components/OurServices";
 import TeamSection from "@/src/components/Team";
 import TestimentionalSection from "@/src/components/Testimentional";
 import WhyChooseSection from "@/src/components/WhyChoose";
-import hero_zh from '@/locales/zh/hero.json'
-import team_zh from '@/locales/zh/team.json'
-import service_zh from '@/locales/zh/services.json'
-import whycho0se_zh from '@/locales/zh/why-choose.json'
-import howwork_zh from '@/locales/zh/how-it-works.json'
-import about_zh from '@/locales/zh/about.json'
-import testi_zh from '@/locales/zh/testimonials-faq-footer.json'
+import hero_en from '@/locales/en/hero.json'
+import team_en from '@/locales/en/team.json'
+import service_en from '@/locales/en/services.json'
+import whycho0se_en from '@/locales/en/why-choose.json'
+import howwork_en from '@/locales/en/how-it-works.json'
+import about_en from '@/locales/en/about.json'
+import testi_en from '@/locales/en/testimonials-faq-footer.json'
 
 import { Metadata } from "next";
 
@@ -70,13 +70,14 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (<>
-  <AccounTixHero msg={hero_zh}/>
-  <TeamSection tr={team_zh}/>
-   <ServicesSection tr={service_zh}/>
-   <WhyChooseSection tr={whycho0se_zh}/>
-   <HowItWorksSection tr={howwork_zh}/>
-   <AboutSection tr={about_zh}/>
-   <TestimentionalSection tr={testi_zh}/>
+  
+  <AccounTixHero msg={hero_en}/>
+  <TeamSection tr={team_en}/>
+   <ServicesSection tr={service_en}/>
+   <WhyChooseSection tr={whycho0se_en}/>
+   <HowItWorksSection tr={howwork_en}/>
+   <AboutSection tr={about_en}/>
+   <TestimentionalSection tr={testi_en}/>
    </>
   );
 }
