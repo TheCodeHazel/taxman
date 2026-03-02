@@ -4,12 +4,15 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail, MapPin, ChevronDown, Award, Users, Shield, CheckCircle, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
 import { TMessages } from '@/locales/type';
+import Link from 'next/link';
 type  Props = {
   msg: TMessages
 }
 const AccounTixHero = ({msg}:Props) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const topBarRef = React.useRef<HTMLDivElement>(null);
+const [topBarHeight, setTopBarHeight] = useState(0);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -17,13 +20,26 @@ const AccounTixHero = ({msg}:Props) => {
     service: ''
   });
 
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setIsScrolled(window.scrollY > 20);
+  //   };
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
+  
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 20);
+  };
+
+  if (topBarRef.current) {
+    setTopBarHeight(topBarRef.current.offsetHeight);
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
 
   const handleSubmit = () => {
     if (!formData.name || !formData.phone || !formData.email || !formData.service) {
@@ -40,36 +56,82 @@ const AccounTixHero = ({msg}:Props) => {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      {/* <div className="h-12 w-full bg-black"></div> */}
-      {/* Animated Navbar */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    <div className="relative min-h-screen overflow-hidden"> 
+    {/* Top Bar */}
+<div
+  ref={topBarRef}
+  className="w-full bg-[#7A1812] text-white text-sm"
+>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex justify-between items-center">
+    
+    {/* Left side */}
+    <div className="flex items-center space-x-6">
+      <div className="flex items-center space-x-2">
+        <Mail className="w-4 h-4" />
+        <span>info@accountix.com</span>
+      </div>
+
+      <div className="flex items-center space-x-2">
+        {/* <MapPin className="w-4 h-4" /> */}
+        {/* <span>Karachi, Pakistan</span> */}
+      </div>
+    </div>
+
+    {/* Right side */}
+    <div className="flex items-center space-x-4">
+        {/* English */}
+  <Link href={'/en'} className="relative px-3 py-1 font-semibold text-white overflow-hidden rounded-md group">
+    {/* <span className="absolute inset-0 bg-[url('/flags/gb.svg')] bg-cover bg-center opacity-30 group-hover:opacity-50 transition"></span>
+    <span className="relative z-10">EN</span> */}
+    <img src="/pk.png" alt="" className=" h-6 w-10" />
+  </Link>
+
+  {/* Chinese */}
+  <Link href={'/'} className="relative px-3 py-1 font-semibold text-white overflow-hidden rounded-md group">
+  <img src="/ch.png" alt="" className=" h-6 w-10" />
+    {/* <span className="absolute inset-0 bg-[url('/cn.png')] bg-cover bg-center opacity-30 group-hover:opacity-50 transition"></span> */}
+    {/* <span className="relative z-10">ZH</span> */}
+  </Link>
+
+      {/* <button className="hover:underline">EN</button>
+      <button className="hover:underline">UR</button> */}
+    </div>
+
+  </div>
+</div>
+<nav
+  style={{
+    top: isScrolled ? 0 : topBarHeight
+  }}
+  className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
+    isScrolled
+      ? 'bg-white shadow-lg py-3'
+      : 'bg-transparent py-5'
+  }`}
+>
+{/* <nav
+  className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
+    isScrolled
+      ? 'top-0 bg-white shadow-lg py-3'
+      : `top-[${topBarHeight}px] bg-transparent py-5`
+  }`}
+> */}
+      {/* <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
           ? 'bg-white shadow-lg py-3' 
           : 'bg-transparent py-5'
-      }`}>
+      }`}> */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center">
-            {/* Logo */}
+          <div className="flex justify-between items-center"> 
             <div className="flex items-center space-x-3 group">
               <div className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 ${
                 isScrolled 
                   ? 'bg-gradient-to-br from-[#FFFFFF] to-[#DCDCDC]' 
                   : 'bg-white backdrop-blur-sm'
               }`}>
-              {/* <div className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 ${
-                isScrolled 
-                  ? 'bg-gradient-to-br from-[#982017] to-[#C32B2B]' 
-                  : 'bg-white/10 backdrop-blur-sm'
-              }`}> */}
-                {/* <Award className={`w-7 h-7 transition-colors duration-300 ${
-                  isScrolled ? 'text-white' : 'text-white'
-                }`} /> */}
-                {/* <Image src="/365Png.png" height={28} width={28} alt='logo'
-                style={{filter: 'brightness(0) invert(1);'}}
-                /> */}
+             
                 <Image src="/365Png.png" height={28} width={28} alt='logo'
-                // style={{filter: 'brightness(0) invert(1);'}}
+                 
                 />
               </div>
               <div>
