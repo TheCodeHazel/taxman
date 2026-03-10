@@ -19,6 +19,7 @@ type Member = {
   credentials: string;
   badgeText: string;
   image: string;
+  image_url: string | null;
   experience: string;
   projects: string;
   specialtyIcon: LucideIcon;
@@ -143,10 +144,14 @@ type PartnerSectionProps = {
                             : 'w-24 h-24 lg:w-32 lg:h-32 text-3xl lg:text-4xl'
                         }`}
                         style={{
+                          backgroundImage: `url('${member.image_url}')`,
+                           backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
                           background: `linear-gradient(135deg, ${member.color}, #C32B2B)`
                         }}
                       >
-                        {member.image}
+                        {member.image_url? null : member.image}
                       </div>
 
                       {/* Badge - hide on mobile when floating */}
@@ -449,6 +454,7 @@ useEffect(() => {
     credentials: _member1.credentials,
     badgeText: _member1.badgeText,
     image: "AA",
+    image_url: "/Abid.png",
     experience: _member1.experience,
     projects: _member1.projects,
     specialtyIcon: Building2,
@@ -467,6 +473,7 @@ useEffect(() => {
     credentials: _member2.credentials,
     badgeText: _member2.badgeText,
     image: "MY",
+    image_url:null,
     experience: _member2.experience,
     projects: _member2.projects,
     specialtyIcon: Globe,
