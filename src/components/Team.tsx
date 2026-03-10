@@ -135,7 +135,26 @@ type PartnerSectionProps = {
                     isScrolled && window.innerWidth < 1024 ? 'mb-2' : 'mb-4 lg:mb-6'
                   }`}>
                     <div className="relative">
-                      <div 
+                     {member.image_url ? <> <div 
+                        className={`rounded-full flex items-center justify-center text-white font-bold shadow-2xl transition-all duration-500 bg-cover bg-center bg-no-repeat ${
+                          isHovered ? 'scale-110 rotate-6' : 'scale-100'
+                        } ${
+                          isScrolled && window.innerWidth < 1024 
+                            ? 'w-16 h-16 text-2xl' 
+                            : 'w-24 h-24 lg:w-32 lg:h-32 text-3xl lg:text-4xl'
+                        }`}
+                        style={{    backgroundImage: `linear-gradient(135deg, ${member.color}, #C32B2B), url('${member.image_url}')`
+}}
+  //                       style={{
+  //                         backgroundImage: `url('${member.image_url}')`,
+  //                          backgroundSize: 'cover',
+  // backgroundPosition: 'center',
+  // backgroundRepeat: 'no-repeat',
+  //                         background: `linear-gradient(135deg, ${member.color}, #C32B2B)`
+  //                       }}
+                      >
+                         
+                      </div> </> : <> <div 
                         className={`rounded-full flex items-center justify-center text-white font-bold shadow-2xl transition-all duration-500 ${
                           isHovered ? 'scale-110 rotate-6' : 'scale-100'
                         } ${
@@ -144,15 +163,11 @@ type PartnerSectionProps = {
                             : 'w-24 h-24 lg:w-32 lg:h-32 text-3xl lg:text-4xl'
                         }`}
                         style={{
-                          backgroundImage: `url('${member.image_url}')`,
-                           backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat',
                           background: `linear-gradient(135deg, ${member.color}, #C32B2B)`
                         }}
                       >
-                        {member.image_url? null : member.image}
-                      </div>
+                        {member.image}
+                      </div></>}
 
                       {/* Badge - hide on mobile when floating */}
                       {!(isScrolled && window.innerWidth < 1024) && (
