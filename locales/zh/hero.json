@@ -1,6 +1,6 @@
 {
   "brand": {
-    "name": "365AccounTix",
+    "name": "TaxConsult",
     "tagline": "会计 | 税务 | 商业解决方案"
   },
   "navbar": {
@@ -9,16 +9,19 @@
       "about": "关于我们",
       "howItWorks": "服务流程",
       "contact": "联系我们",
-      "callNow": "立即致电"
+      "callNow": "立即致电",
+      "wechat": "微信：abidali8888",
+  "whatsapp": "WhatsApp：+92 335 0522833",
+  "email": "邮箱：ceo@abidalico.com"
     }
   },
   "hero": {
     "trustedBadge": "超过 500 家企业的信赖之选",
     "headline": {
-      "line1": "伊斯兰堡值得信赖的",
-      "line2": "税务与商业咨询"
+      "line1": "家总部位于巴基斯坦的咨询公司",
+      "line2": "提供战略性税务、企业及商业咨询服务"
     },
-    "description": "为巴基斯坦各地的个人与企业提供专业报税、公司注册及财务咨询服务"
+    "description": "为巴基斯坦各地的个人和企业提供专业的报税、公司注册及财务咨询服务"
   },
   "stats": {
     "experience": {

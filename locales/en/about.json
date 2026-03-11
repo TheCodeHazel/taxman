@@ -1,11 +1,11 @@
 {
   "header": {
-    "badge": "About 365AccounTix",
+    "badge": "About TaxConsult",
     "titleLine1": "Your Partner in",
     "titleLine2": "Financial Success"
   },
   "story": {
-    "paragraph1": "Founded in 2010, 365AccounTix Consultancy has grown from a small tax advisory firm into one of Islamabad's most trusted names in financial services. What started as a passion for helping individuals navigate complex tax regulations has evolved into a comprehensive consultancy serving over 500 businesses and individuals.",
+    "paragraph1": "Founded in 2010, TaxConsult Consultancy has grown from a small tax advisory firm into one of Islamabad's most trusted names in financial services. What started as a passion for helping individuals navigate complex tax regulations has evolved into a comprehensive consultancy serving over 500 businesses and individuals.",
     "paragraph2": "Our team of 25+ certified professionals brings together decades of combined experience in taxation, accounting, and business advisory. We don't just file your taxes—we become your long-term financial partners, invested in your growth and success.",
     "paragraph3": "From our headquarters in Islamabad, we proudly serve clients across Rawalpindi, Lahore, Karachi, and beyond. Our commitment to transparency, personalized service, and staying ahead of regulatory changes has earned us a 98% client retention rate—a testament to the trust our clients place in us."
   },
@@ -63,7 +63,7 @@
     }
   ],
   "cta": {
-    "text": "Ready to experience the 365AccounTix difference? Let's start building your financial success story together.",
+    "text": "Ready to experience the TaxConsult difference? Let's start building your financial success story together.",
     "buttonText": "Schedule a Consultation"
   }
 }

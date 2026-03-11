@@ -240,7 +240,7 @@ const [visibleElements, setVisibleElements] = useState<VisibleElement[]>([]);
             >
               <div className="prose prose-lg">
                 <p className="text-gray-700 leading-relaxed text-lg">
-                  {/* Founded in <span className="font-bold text-[#982017]">2010</span>, 365AccounTix Consultancy has grown from a small tax advisory firm into one of Islamabad's most trusted names in financial services. What started as a passion for helping individuals navigate complex tax regulations has evolved into a comprehensive consultancy serving over 500 businesses and individuals. */}
+                  {/* Founded in <span className="font-bold text-[#982017]">2010</span>, TaxConsult Consultancy has grown from a small tax advisory firm into one of Islamabad's most trusted names in financial services. What started as a passion for helping individuals navigate complex tax regulations has evolved into a comprehensive consultancy serving over 500 businesses and individuals. */}
                   {tr.story.paragraph1}
                 </p>
 

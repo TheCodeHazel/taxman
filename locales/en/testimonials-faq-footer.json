@@ -10,7 +10,7 @@
         "name": "Ahmed Hassan",
         "role": "CEO, Tech Solutions Ltd",
         "rating": 5,
-        "text": "365AccounTix has been handling our corporate taxes for 3 years now. Their expertise in Pakistani tax laws is unmatched. They saved us significant money through proper planning and always deliver on time.",
+        "text": "TaxConsult has been handling our corporate taxes for 3 years now. Their expertise in Pakistani tax laws is unmatched. They saved us significant money through proper planning and always deliver on time.",
         "avatar": "AH"
       },
       {
@@ -18,7 +18,7 @@
         "name": "Fatima Khan",
         "role": "Small Business Owner",
         "rating": 5,
-        "text": "As a first-time business owner, I was overwhelmed with tax compliance. 365AccounTix made everything so simple and explained every step. Their personalized service is worth every penny!",
+        "text": "As a first-time business owner, I was overwhelmed with tax compliance. TaxConsult made everything so simple and explained every step. Their personalized service is worth every penny!",
         "avatar": "FK"
       },
       {
@@ -26,7 +26,7 @@
         "name": "Usman Ali",
         "role": "Freelance Consultant",
         "rating": 5,
-        "text": "Filing individual returns used to be a nightmare. 365AccounTix's online system is incredibly easy, and their team is always available to answer questions. Highly recommended for freelancers!",
+        "text": "Filing individual returns used to be a nightmare. TaxConsult's online system is incredibly easy, and their team is always available to answer questions. Highly recommended for freelancers!",
         "avatar": "UA"
       }
     ]
@@ -66,8 +66,8 @@
   },
   {
     "id": 6,
-    "question": "How do I contact 365AccounTix consultancy?",
-    "answer": "You can reach us multiple ways: Call us at +92 51 1234567, WhatsApp at +92 300 1234567, email us at info@365AccounTix.com, or visit our office in Blue Area, Islamabad. You can also fill out the contact form on our website for a callback within 2 hours during business hours."
+    "question": "How do I contact TaxConsult consultancy?",
+    "answer": "You can reach us multiple ways: Call us at +92 51 1234567, WhatsApp at +92 300 1234567, email us at ceo@abidalico.com, or visit our office in Blue Area, Islamabad. You can also fill out the contact form on our website for a callback within 2 hours during business hours."
   }
 ]
   },
@@ -83,7 +83,8 @@
       "Contact"
     ],
     "contactTitle": "Contact Info",
-    "address": "Blue Area, Plot 123, Islamabad, Pakistan",
+    "address": "Ground Floor , State Life Building -7 , F-6/4 Jinnah Avenue Blue Area, Islamabad",
+    "address2": "Head Office – CA Firm Lahore, Suite #5 & 6, Ground Floor, New 1-Campus, Ross Residencia, Canal Road, Quaid-i-Azam Campus, Lahore.",
     "businessHoursTitle": "Business Hours",
     "hours": {
       "monFri": "Mon - Fri",
@@ -94,7 +95,7 @@
       "sunTime": "Closed"
     },
     "viewOnMap": "View on Map",
-    "copyright": "© 2025 365AccounTix Consultancy. All rights reserved.",
+    "copyright": "© 2025 TaxConsult Consultancy. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "cookie": "Cookie Policy"

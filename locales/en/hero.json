@@ -1,6 +1,6 @@
 {
   "brand": {
-    "name": "365AccounTix",
+    "name": "TaxConsult",
     "tagline": "Accounting | Tax | Business Solution"
   },
   "navbar": {
@@ -9,16 +9,19 @@
       "about": "About",
       "howItWorks": "How It Works",
       "contact": "Contact",
-      "callNow": "Call Now"
+      "callNow": "Call Now",
+      "wechat": "WeChat: abidali8888",
+      "whatsapp": "WhatsApp: +92 335 0522833",
+      "email": "ceo@abidalico.com"
     }
   },
   "hero": {
     "trustedBadge": "Trusted by 500+ Businesses",
     "headline": {
-      "line1": "Islamabad's Trusted",
-      "line2": "Tax & Business Consultancy"
+      "line1": "A Pakistan-Based Advisory",
+      "line2": "Firm Providing Strategic Tax, Corporate, and Business Consulting Services"
     },
-    "description": "Expert tax filing, business registration & financial consulting for individuals & businesses across Pakistan"
+    "description": "Providing professional tax filing, company registration and financial consulting services to individuals and businesses throughout Pakistan."
   },
   "stats": {
     "experience": {

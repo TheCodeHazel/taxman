@@ -10,7 +10,7 @@
         "name": "Ahmed Hassan",
         "role": "Tech Solutions Ltd 首席执行官",
         "rating": 5,
-        "text": "365AccounTix 已为我们处理企业税务达3年之久。他们在巴基斯坦税法方面的专业能力无与伦比。通过合理规划为我们节省了大量成本，并始终按时交付。",
+        "text": "TaxConsult 已为我们处理企业税务达3年之久。他们在巴基斯坦税法方面的专业能力无与伦比。通过合理规划为我们节省了大量成本，并始终按时交付。",
         "avatar": "AH"
       },
       {
@@ -18,7 +18,7 @@
         "name": "Fatima Khan",
         "role": "小企业主",
         "rating": 5,
-        "text": "作为首次创业者，我对税务合规感到非常困惑。365AccounTix 让一切变得简单明了，并详细讲解每一个步骤。他们的个性化服务物超所值！",
+        "text": "作为首次创业者，我对税务合规感到非常困惑。TaxConsult 让一切变得简单明了，并详细讲解每一个步骤。他们的个性化服务物超所值！",
         "avatar": "FK"
       },
       {
@@ -26,7 +26,7 @@
         "name": "Usman Ali",
         "role": "自由顾问",
         "rating": 5,
-        "text": "个人报税曾经是一场噩梦。365AccounTix 的在线系统非常便捷，团队也随时解答问题。强烈推荐给自由职业者！",
+        "text": "个人报税曾经是一场噩梦。TaxConsult 的在线系统非常便捷，团队也随时解答问题。强烈推荐给自由职业者！",
         "avatar": "UA"
       }
     ]
@@ -66,8 +66,8 @@
   },
   {
     "id": 6,
-    "question": "如何联系365AccounTix咨询公司？",
-    "answer": "您可以通过多种方式联系我们：拨打电话 +92 51 1234567，通过WhatsApp联系 +92 300 1234567，发送邮件至 info@365AccounTix.com，或亲临伊斯兰堡Blue Area办公室。您也可以填写我们网站上的联系表单，我们将在工作时间内2小时内回电。"
+    "question": "如何联系TaxConsult咨询公司？",
+    "answer": "您可以通过多种方式联系我们：拨打电话 +92 51 1234567，通过WhatsApp联系 +92 300 1234567，发送邮件至 ceo@abidalico.com，或亲临伊斯兰堡Blue Area办公室。您也可以填写我们网站上的联系表单，我们将在工作时间内2小时内回电。"
   }
     ]
   },
@@ -83,7 +83,8 @@
       "联系我们"
     ],
     "contactTitle": "联系信息",
-    "address": "巴基斯坦 伊斯兰堡 蓝区 123号地块",
+    "address": "巴基斯坦伊斯兰堡蓝区，真纳大道 F-6/4，State Life 大厦 7 号，底层。",
+    "address2": "总部 – 拉合尔注册会计师事务所，5号和6号套房，底层，New 1-Campus，Ross Residencia，Canal Road，Quaid-i-Azam Campus，拉合尔。",
     "businessHoursTitle": "营业时间",
     "hours": {
       "monFri": "周一 - 周五",
@@ -94,7 +95,7 @@
       "sunTime": "休息"
     },
     "viewOnMap": "在地图上查看",
-    "copyright": "© 2025 365AccounTix 咨询公司。保留所有权利。",
+    "copyright": "© 2025 TaxConsult 咨询公司。保留所有权利。",
     "privacy": "隐私政策",
     "terms": "服务条款",
     "cookie": "Cookie 政策"

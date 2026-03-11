@@ -43,7 +43,7 @@ const TestimentionalSection = ({tr}:Props) => {
       name: "Ahmed Hassan",
       role: "CEO, Tech Solutions Ltd",
       rating: 5,
-      text: "365AccounTix has been handling our corporate taxes for 3 years now. Their expertise in Pakistani tax laws is unmatched. They saved us significant money through proper planning and always deliver on time.",
+      text: "TaxConsult has been handling our corporate taxes for 3 years now. Their expertise in Pakistani tax laws is unmatched. They saved us significant money through proper planning and always deliver on time.",
       avatar: "AH"
     },
     {
@@ -51,7 +51,7 @@ const TestimentionalSection = ({tr}:Props) => {
       name: "Fatima Khan",
       role: "Small Business Owner",
       rating: 5,
-      text: "As a first-time business owner, I was overwhelmed with tax compliance. 365AccounTix made everything so simple and explained every step. Their personalized service is worth every penny!",
+      text: "As a first-time business owner, I was overwhelmed with tax compliance. TaxConsult made everything so simple and explained every step. Their personalized service is worth every penny!",
       avatar: "FK"
     },
     {
@@ -59,7 +59,7 @@ const TestimentionalSection = ({tr}:Props) => {
       name: "Usman Ali",
       role: "Freelance Consultant",
       rating: 5,
-      text: "Filing individual returns used to be a nightmare. 365AccounTix's online system is incredibly easy, and their team is always available to answer questions. Highly recommended for freelancers!",
+      text: "Filing individual returns used to be a nightmare. TaxConsult's online system is incredibly easy, and their team is always available to answer questions. Highly recommended for freelancers!",
       avatar: "UA"
     }
   ];
@@ -92,8 +92,8 @@ const TestimentionalSection = ({tr}:Props) => {
     },
     {
       id: 6,
-      question: "How do I contact 365AccounTix consultancy?",
-      answer: "You can reach us multiple ways: Call us at +92 51 1234567, WhatsApp at +92 300 1234567, email us at info@365AccounTix.com, or visit our office in Blue Area, Islamabad. You can also fill out the contact form on our website for a callback within 2 hours during business hours."
+      question: "How do I contact TaxConsult consultancy?",
+      answer: "You can reach us multiple ways: Call us at +92 51 1234567, WhatsApp at +92 300 1234567, email us at ceo@abidalico.com, or visit our office in Blue Area, Islamabad. You can also fill out the contact form on our website for a callback within 2 hours during business hours."
     }
   ];
 
@@ -350,7 +350,7 @@ const TestimentionalSection = ({tr}:Props) => {
                     <Image src="/365Png.png" height={28} width={28} alt='logo'/>
                   </div>
                   <div>
-                    <h3 className="text-white text-2xl font-bold">365AccounTix</h3>
+                    <h3 className="text-white text-2xl font-bold">TaxConsult</h3>
                     <p className="text-xs text-gray-400">
 {tr.footer.companyTagline}</p>
                   </div>
@@ -420,6 +420,10 @@ const TestimentionalSection = ({tr}:Props) => {
               <ul className="space-y-4">
                 <li className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 text-[#982017] flex-shrink-0 mt-1" />
+                  <span className="text-sm">{tr.footer.address2}</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <MapPin className="w-5 h-5 text-[#982017] flex-shrink-0 mt-1" />
                   <span className="text-sm">{tr.footer.address}</span>
                 </li>
                 <li className="flex items-center space-x-3">
@@ -436,8 +440,8 @@ const TestimentionalSection = ({tr}:Props) => {
                 </li>
                 <li className="flex items-center space-x-3">
                   <Mail className="w-5 h-5 text-[#982017]" />
-                  <a href="mailto:info@365AccounTix.com" className="text-sm hover:text-[#982017] transition-colors">
-                    info@365AccounTix.com
+                  <a href="mailto:ceo@abidalico.com" className="text-sm hover:text-[#982017] transition-colors">
+                    ceo@abidalico.com
                   </a>
                 </li>
               </ul>

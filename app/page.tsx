@@ -16,8 +16,8 @@ import testi_zh from '@/locales/zh/testimonials-faq-footer.json'
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: '365AccounTix - 拉瓦尔品第与伊斯兰堡会计、税务与企业注册服务',
-  description: '365AccounTix 在拉瓦尔品第和伊斯兰堡提供专业会计服务、税务咨询、SECP 公司注册、NTN 与 STR 注册、簿记服务及薪资管理。立即获取专业商业解决方案！',
+  title: 'TaxConsult - 拉瓦尔品第与伊斯兰堡会计、税务与企业注册服务',
+  description: 'TaxConsult 在拉瓦尔品第和伊斯兰堡提供专业会计服务、税务咨询、SECP 公司注册、NTN 与 STR 注册、簿记服务及薪资管理。立即获取专业商业解决方案！',
   keywords: [
     "拉瓦尔品第会计服务",
     "伊斯兰堡税务顾问",
@@ -30,32 +30,32 @@ export const metadata: Metadata = {
     "巴基斯坦企业税务服务",
     "伊斯兰堡初创公司注册"
   ],
-  authors: [{ name: "365AccounTix" }],
-  applicationName: '365AccounTix',
+  authors: [{ name: "TaxConsult" }],
+  applicationName: 'TaxConsult',
   alternates: {
-    canonical: 'https://365accountix.com'
+    canonical: 'https://TaxConsult.com'
   },
   openGraph: {
-    title: '365AccounTix - 会计、税务与企业注册专家',
+    title: 'TaxConsult - 会计、税务与企业注册专家',
     description: '在拉瓦尔品第与伊斯兰堡提供专业会计、税务咨询、SECP 公司注册、NTN 与 STR 注册、簿记及薪资管理服务。',
     type: 'website',
-    siteName: "365AccounTix",
+    siteName: "TaxConsult",
     locale: "zh_CN",
-    url: "https://365accountix.com",
+    url: "https://TaxConsult.com",
     images: [
       {
         url: '/logo.png',
         width: 512,
         height: 512,
-        alt: '365AccounTix 会计与税务服务',
+        alt: 'TaxConsult 会计与税务服务',
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: '365AccounTix - 会计、税务与企业注册服务',
+    title: 'TaxConsult - 会计、税务与企业注册服务',
     description: '在拉瓦尔品第与伊斯兰堡提供专业会计、报税、SECP 注册、NTN 与 STR 服务、簿记及薪资管理。',
-    creator: '@365accountix',
+    creator: '@TaxConsult',
     images: ['/images/logo.png'],
   },
   viewport: 'width=device-width, initial-scale=1',
